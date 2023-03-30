@@ -15,6 +15,11 @@ body {
     box-sizing: inherit;
 }
 
+h1{
+    font-size: 32px;
+}
+
+@media screen and (max-width:700px) {}
 
 @media screen and (min-width:300px) and (max-width:700px) and (min-height:700px) {}
 
@@ -22,4 +27,3 @@ body {
 
 @media screen and (min-width:700px) and (max-height:800px) {}
 
-@media screen and (min-width:1025px) and (min-height:801px) {}
