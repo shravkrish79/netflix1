@@ -1,0 +1,56 @@
+[
+  {
+    "key": "Title",
+    "id": "movietitle",
+    "label": "Movie/Documentary Title :",
+    "type": "text",
+    "placeholder": "Ex:- Avatar(2009)",
+    "required": true,
+    "disabled": false,
+    "autoFocus": true
+  },
+  {
+    "key": "ShortDesc",
+    "id": "shortdesc",
+    "label": "Short Description :",
+    "type": "textarea",
+    "placeholder": "Avatar is Fantasy type movie. It also has science fiction, adventure & action.",
+    "required": true,
+    "disabled": false,
+    "min": 10,
+    "max": 1000,
+    "autoFocus": true
+  },
+  {
+    "key": "LongDesc",
+    "id": "longdesc",
+    "label": "Long Description :",
+    "type": "textarea",
+    "placeholder": "In the 22nd century, a paraplegic Marine is dispatched to the moon Pandora on a unique mission, but becomes torn between following orders and protecting an alien civilization.",
+    "required": true,
+    "disabled": false,
+    "min": 10,
+    "max": 1000,
+    "autoFocus": true
+  },
+  {
+    "key": "BannerImage",
+    "id": "bannerimage",
+    "label": "Choose Banner image :",
+    "type": "file",
+    "accept": "image/png, image/jpeg, image/webp",
+    "required": true,
+    "autoFocus": true,
+    "multiple": false
+  },
+  {
+    "key": "ThumbnailImage",
+    "id": "thumbnailimage",
+    "label": "Choose Thumbnail for your video :",
+    "type": "file",
+    "accept": "image/png, image/jpeg, image/webp",
+    "required": false,
+    "autoFocus": true,
+    "multiple": false
+  }
+]

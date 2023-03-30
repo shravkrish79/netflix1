@@ -1,0 +1,15 @@
+[
+    {
+      "key": "Category",
+      "id": "videocategory",
+      "label": "What do you want to upload?",
+      "type": "select",
+      "initialValue": "None",
+      "options": [
+       "Movies", "Tv Shows", "Documentaries"
+      ],
+      "placeholder": "Gender",
+      "required": true,
+      "autoFocus": true
+    }
+  ]

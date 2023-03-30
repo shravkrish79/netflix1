@@ -1,2 +1,4 @@
 @import "./variable.css";
 @import "./app.css";
+
+@import "../pages/contentmanager.css";
