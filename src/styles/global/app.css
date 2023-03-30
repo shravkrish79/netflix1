@@ -1,0 +1,25 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+body {
+    font-family: NetfilxSans, "Helvetica Neue", "Segoe UI", Roboto, Ubuntu, sans-serif;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    min-height: 100%;
+    width: 100%;
+    box-sizing: inherit;
+}
+
+
+@media screen and (min-width:300px) and (max-width:700px) and (min-height:700px) {}
+
+@media screen and (min-width:700px) and (max-width:1024px) {}
+
+@media screen and (min-width:700px) and (max-height:800px) {}
+
+@media screen and (min-width:1025px) and (min-height:801px) {}
