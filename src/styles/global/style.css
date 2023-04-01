@@ -4,4 +4,6 @@
 @import "../pages/contentmanager.css";
 @import "../pages/category.css";
 
-/* @import "../pages/contentmanager1.css"; */
+@import "../components/modaladdform.css";
+
+@import "../components/modal.css";

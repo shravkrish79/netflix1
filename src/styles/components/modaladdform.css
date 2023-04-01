@@ -1,0 +1,39 @@
+#AddForm {
+    text-align: center;
+    min-height: 100vh;
+}
+
+#AddForm>h1 {
+    background-color: var(--netflix-red);
+    line-height: 1.5;
+}
+
+.content-form {
+    width: 100%;
+    margin: 35px auto;
+}
+
+#releaseddate span,
+#timelength span,
+#rating span {
+    padding-right: 40%;
+}
+
+#Rating {
+    font-size: 20px;
+    width: 50%;
+}
+
+.addform-btn{
+    height: 35px;
+    width: 120px;
+    margin:auto 25px;
+    margin-top: 30px;
+    background-color: var(--color-white);
+    font-size: 20px;
+}
+
+.addform-btn:hover{
+    background-color: var(--netflix-red);
+    color: var(--color-white);
+}

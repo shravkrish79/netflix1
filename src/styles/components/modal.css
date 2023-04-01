@@ -1,0 +1,36 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.modalview {
+    position: absolute;
+    top: 100%;
+    left: 45vw;
+    transform: translate(-20vw, -50%);
+    background-color: var(--modal-black);
+    color: var(--color-white);
+    z-index: 1001;
+    width: 50vw;
+    min-height: 60vh;
+    border: 1px solid var(--netflix-red);
+    text-align: center;
+    overflow-y: auto;
+}
+
+.modalview-btn {
+    float: right;
+    height: 45px;
+    width: 45px;
+    padding: 0 10px;
+    background-color: var(--netflix-red);
+    border: none;
+    cursor: pointer;
+    font-weight: 800;
+}
