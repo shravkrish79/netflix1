@@ -8,7 +8,7 @@
       "options": [
        "Movies", "Tv Shows", "Documentaries"
       ],
-      "placeholder": "Gender",
+      "placeholder": "",
       "required": true,
       "autoFocus": true
     }

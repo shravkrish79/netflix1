@@ -6,7 +6,7 @@ export default function InputTextArea({ item, state }) {
   const formValue = form[item.key];
 
   return (
-    <label className="input-textarea">
+    <label className="input-textarea" id={item.id}>
       <span> {item.label} </span>
       <textarea
         // State
@@ -15,6 +15,7 @@ export default function InputTextArea({ item, state }) {
           setForm({ ...form, [formKey]: event.target.value })
         }
         // Commpon properties
+        id={item.key}
         required={item.required}
         disabled={item.disabled}
         placeholder={item.placeholder}

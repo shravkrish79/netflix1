@@ -10,10 +10,10 @@ export default function InputSelect({ item, state }) {
   );
 
   return (
-    <label className="input-field">
+    <label className="input-field" id={item.id}>
       <span> {item.label} </span>
       <select
-        id={item.id}
+        id={item.key}
         value={formValue}
         required={item.required}
         disabled={item.disabled}

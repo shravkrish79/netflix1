@@ -52,5 +52,98 @@
     "required": false,
     "autoFocus": true,
     "multiple": false
-  }
+  },
+  {
+    "key": "OriginalLanguage",
+    "id": "originallanguage",
+    "label": "Original-Language :",
+    "type": "text",
+    "placeholder": "Ex:- English, Swedish, Tamil, Telugu, Malayalam",
+    "required": true,
+    "disabled": false,
+    "autoFocus": true
+  },
+  {
+    "key": "DuppedlLanguage",
+    "id": "duppedlanguage",
+    "label": "Dupped-Language :",
+    "type": "text",
+    "placeholder": "Ex:- English, Swedish, Tamil, Telugu, Malayalam",
+    "required": true,
+    "disabled": false,
+    "autoFocus": true
+  },
+  {
+    "key": "ReleasedDate",
+    "id": "releaseddate",
+    "label": "Released Date :",
+    "type": "datetime-local",
+    "placeholder": "",
+    "required": true,
+    "disabled": false,
+    "autoFocus": true
+  },
+  {
+    "key": "TimeLength",
+    "id": "timelength",
+    "label": "Time Length :",
+    "type": "text",
+    "placeholder": "1Hr. 30Mins.",
+    "required": true,
+    "disabled": false,
+    "autoFocus": true
+  },
+  {
+    "key": "Casting",
+    "id": "casting",
+    "label": "Cast :",
+    "type": "text",
+    "placeholder": "Ex:- Sam Worthington, Zoe Saldaña, Sigourney Weaver, Stephen Lang",
+    "required": true,
+    "disabled": false,
+    "autoFocus": true
+  },
+  {
+  "key": "Rating",
+  "id": "rating",
+  "label": "Maturity Rating :",
+  "type": "select",
+  "initialValue": "None",
+  "options": [
+  "U", "U/A 7+", "U/A 13+","U/A 16+","A"
+  ],
+  "placeholder": "",
+  "required": true,
+  "autoFocus": true
+  },
+  {
+    "key": "Genres",
+    "id": "genres",
+    "label": "Genres :",
+    "type": "text",
+    "placeholder": "Ex:- Action, Adventure, Comedy, Fantasy, Horror, Thriller",
+    "required": true,
+    "disabled": false,
+    "autoFocus": true
+  },
+  {
+    "key": "Trailer",
+    "id": "trailer",
+    "label": "Upload Trailer :",
+    "type": "file",
+    "accept": "video/*",
+    "required": false,
+    "autoFocus": true,
+    "multiple": false
+  },
+  {
+    "key": "FullVideo",
+    "id": "fullvideo",
+    "label": "Upload Video :",
+    "type": "file",
+    "accept": "video/*",
+    "required": false,
+    "autoFocus": true,
+    "multiple": false
+  }  
 ]

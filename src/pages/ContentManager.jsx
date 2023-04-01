@@ -4,16 +4,24 @@ import FormFieldGenerator from "../components/FormFieldGenerator";
 import { useState } from "react";
 
 export default function ContentManager() {
-    const [form, setForm] = useState({})
+    const [form, setForm] = useState({});
+    function onSubmit(event){
+        event.preventDefault();
+    }
+    function cancelform(){
+        
+    }
     return (
         <div id="contentmanager">
             <h1>Content Manager</h1>
             <div className="content-type">
                 <FormFieldGenerator data={CategoryData} state={[form, setForm]} />
             </div>
-            <div className="content-form">
+            <form className="content-form" id="contentform" onSubmit={(event) => onSubmit(event)}>
                 <FormFieldGenerator data={MovieFormData} state={[form, setForm]} />
-            </div>
+                <button className="content-submit-btn" id="addCourse-submit" >Submit</button>
+                <button className="content-cancel-btn" id="addCourse-cancel" onClick={() => cancelform()}>Cancel</button>
+            </form>
         </div>
     )
 }

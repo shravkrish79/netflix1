@@ -10,6 +10,7 @@ export default function FormFieldGenerator({ data, state }) {
             case "email":
             case "number":
             case "password":
+            case "datetime-local":
             case "text":
                 return <InputField key={item.id} item={item} state={state} />;
             case "textarea":

@@ -36,13 +36,16 @@ textarea {
     height: 30px;
     font-size: 18px;
 }
-input [type=file]{
+
+input[type='datetime-local'], input[id='timelength']{
     width: 50%;
 }
+
 
 .input-textarea {
     height: 150px;
 }
+
 
 textarea {
     height: 100px;
@@ -52,6 +55,7 @@ select {
     margin: 0 auto;
     font-size: 24px;
 }
+
 
 @media screen and (max-width:700px) {}
 

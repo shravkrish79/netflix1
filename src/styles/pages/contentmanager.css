@@ -1,23 +1,35 @@
-#contentmanager{
+#contentmanager {
     padding-top: 150px;
     text-align: center;
     min-height: 100vh;
 }
 
-#contentmanager>h1{
+#contentmanager>h1 {
     border-bottom: 2px solid var(--color-white);
     width: fit-content;
     line-height: 1.5;
 }
 
 
-.content-type label{
+.content-type label {
     margin: 50px auto;
     text-align: center;
     font-size: 26px;
 }
 
-.content-form{
+.content-form {
     width: 70%;
     margin: auto;
 }
+
+#releaseddate span,
+#timelength span,
+#rating span {
+    padding-right: 40%;
+}
+
+#Rating {
+    font-size: 20px;
+    width: 50%;
+}
+
