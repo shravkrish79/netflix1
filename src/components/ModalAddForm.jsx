@@ -1,15 +1,17 @@
 import { useState } from "react";
 import FormFieldGenerator from "../components/FormFieldGenerator";
 import MovieFormData from "../data/movies.json";
+import InitialData from "../data/initialdata.json";
 import SeriesData from "../data/series.json";
 import { useCategory } from "../state/useCategory";
 
 export default function ModalAddForm({ formData }) {
-    const [form, setForm] = useState({});
+    const [form, setForm] = useState((formData === 'TVShows') ? InitialData[1] : InitialData[0]);
     const { setModal } = useCategory();
     const data = (formData === 'TVShows') ? SeriesData : MovieFormData;
     function onSubmit(event) {
         event.preventDefault();
+        console.log(form);
     }
     function cancelform() {
         setModal(null);

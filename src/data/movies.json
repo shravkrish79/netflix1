@@ -64,9 +64,9 @@
     "autoFocus": true
   },
   {
-    "key": "DuppedlLanguage",
-    "id": "duppedlanguage",
-    "label": "Dupped-Language :",
+    "key": "DubbedLanguage",
+    "id": "dubbedlanguage",
+    "label": "Dubbed-Language :",
     "type": "text",
     "placeholder": "Ex:- English, Swedish, Tamil, Telugu, Malayalam",
     "required": true,
