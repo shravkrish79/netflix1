@@ -1,15 +1,17 @@
 [
-    {
-      "key": "Category",
-      "id": "videocategory",
-      "label": "What do you want to upload?",
-      "type": "select",
-      "initialValue": "None",
-      "options": [
-       "Movies", "Tv Shows", "Documentaries"
-      ],
-      "placeholder": "",
-      "required": true,
-      "autoFocus": true
-    }
-  ]
+  {
+    "id": 0,
+    "name": "Movies",
+    "path":"movies"
+  },
+  {
+    "id": 1,
+    "name": "TV Shows",
+    "path":"tvshows"
+  },
+  {
+    "id": 2,
+    "name": "Documentary",
+    "path":"documentary"
+  }
+]

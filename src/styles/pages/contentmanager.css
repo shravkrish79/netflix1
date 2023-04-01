@@ -1,35 +1,36 @@
 #contentmanager {
-    padding-top: 150px;
+    min-height: 60vh;
+    width: 100%;
     text-align: center;
-    min-height: 100vh;
+    padding-top: 200px;
 }
 
-#contentmanager>h1 {
-    border-bottom: 2px solid var(--color-white);
-    width: fit-content;
-    line-height: 1.5;
-}
-
-
-.content-type label {
-    margin: 50px auto;
-    text-align: center;
-    font-size: 26px;
-}
-
-.content-form {
-    width: 70%;
+.card-container {
+    width: 60vw;
+    min-height: 60vh;
     margin: auto;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
 }
 
-#releaseddate span,
-#timelength span,
-#rating span {
-    padding-right: 40%;
+.card-container a {
+    text-decoration: none;
+    color: var(--color-white);
+    height: 30vh;
+    width: 15vw;
+    border: 1px solid var(--netflix-red);
+    line-height: 30vh;
+    font-size: 26px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
 }
 
-#Rating {
-    font-size: 20px;
-    width: 50%;
+.card-container a:hover {
+    color: var(--color-white);
+    background-color: var(--netflix-red);
+    border: 1px solid var(--color-white);
+    transform: translateY(-5%);
 }
-
