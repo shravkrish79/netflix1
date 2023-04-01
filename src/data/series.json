@@ -1,0 +1,149 @@
+[
+  {
+    "key": "Title",
+    "id": "movietitle",
+    "label": "Movie/Documentary Title :",
+    "type": "text",
+    "placeholder": "Ex:- Avatar(2009)",
+    "required": true,
+    "disabled": false,
+    "autoFocus": true
+  },
+  {
+    "key": "ShortDesc",
+    "id": "shortdesc",
+    "label": "Short Description :",
+    "type": "textarea",
+    "placeholder": "Avatar is Fantasy type movie. It also has science fiction, adventure & action.",
+    "required": true,
+    "disabled": false,
+    "min": 10,
+    "max": 1000,
+    "autoFocus": true
+  },
+  {
+    "key": "LongDesc",
+    "id": "longdesc",
+    "label": "Long Description :",
+    "type": "textarea",
+    "placeholder": "In the 22nd century, a paraplegic Marine is dispatched to the moon Pandora on a unique mission, but becomes torn between following orders and protecting an alien civilization.",
+    "required": true,
+    "disabled": false,
+    "min": 10,
+    "max": 1000,
+    "autoFocus": true
+  },
+  {
+    "key": "BannerImage",
+    "id": "bannerimage",
+    "label": "Choose Banner image :",
+    "type": "file",
+    "accept": "image/png, image/jpeg, image/webp",
+    "required": true,
+    "autoFocus": true,
+    "multiple": false
+  },
+  {
+    "key": "ThumbnailImage",
+    "id": "thumbnailimage",
+    "label": "Choose Thumbnail for your video :",
+    "type": "file",
+    "accept": "image/png, image/jpeg, image/webp",
+    "required": false,
+    "autoFocus": true,
+    "multiple": false
+  },
+  {
+    "key": "OriginalLanguage",
+    "id": "originallanguage",
+    "label": "Original-Language :",
+    "type": "text",
+    "placeholder": "Ex:- English, Swedish, Tamil, Telugu, Malayalam",
+    "required": true,
+    "disabled": false,
+    "autoFocus": true
+  },
+  {
+    "key": "DuppedlLanguage",
+    "id": "duppedlanguage",
+    "label": "Dupped-Language :",
+    "type": "text",
+    "placeholder": "Ex:- English, Swedish, Tamil, Telugu, Malayalam",
+    "required": true,
+    "disabled": false,
+    "autoFocus": true
+  },
+  {
+    "key": "ReleasedDate",
+    "id": "releaseddate",
+    "label": "Released Date :",
+    "type": "datetime-local",
+    "placeholder": "",
+    "required": true,
+    "disabled": false,
+    "autoFocus": true
+  },
+  {
+    "key": "TimeLength",
+    "id": "timelength",
+    "label": "Time Length :",
+    "type": "text",
+    "placeholder": "1Hr. 30Mins.",
+    "required": true,
+    "disabled": false,
+    "autoFocus": true
+  },
+  {
+    "key": "Casting",
+    "id": "casting",
+    "label": "Cast :",
+    "type": "text",
+    "placeholder": "Ex:- Sam Worthington, Zoe Saldaña, Sigourney Weaver, Stephen Lang",
+    "required": true,
+    "disabled": false,
+    "autoFocus": true
+  },
+  {
+  "key": "Rating",
+  "id": "rating",
+  "label": "Maturity Rating :",
+  "type": "select",
+  "initialValue": "None",
+  "options": [
+  "U", "U/A 7+", "U/A 13+","U/A 16+","A"
+  ],
+  "placeholder": "",
+  "required": true,
+  "autoFocus": true
+  },
+  {
+    "key": "Genres",
+    "id": "genres",
+    "label": "Genres :",
+    "type": "text",
+    "placeholder": "Ex:- Action, Adventure, Comedy, Fantasy, Horror, Thriller",
+    "required": true,
+    "disabled": false,
+    "autoFocus": true
+  },
+  {
+    "key": "Trailer",
+    "id": "trailer",
+    "label": "Upload Trailer :",
+    "type": "file",
+    "accept": "video/*",
+    "required": false,
+    "autoFocus": true,
+    "multiple": false
+  },
+  {
+    "key": "FullVideo",
+    "id": "fullvideo",
+    "label": "Upload Video :",
+    "type": "file",
+    "accept": "video/*",
+    "required": false,
+    "autoFocus": true,
+    "multiple": false
+  }  
+]

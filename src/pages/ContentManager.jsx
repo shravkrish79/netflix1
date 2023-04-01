@@ -9,7 +9,7 @@ export default function ContentManager() {
         event.preventDefault();
     }
     function cancelform(){
-        
+
     }
     return (
         <div id="contentmanager">
