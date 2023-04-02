@@ -28,18 +28,23 @@ export default function Category() {
         setStatus(2);
     }
 
-    const categoryItems = (categoryData.map((recs) => <CategoryCard data={category} />))
+    const categoryItems = (categoryData.map((recs) => <CategoryCard key={recs.id} categoryData={recs} path={collection} />))
 
     return (
         <div>
             {(status === 0) && <h1> Loading... </h1>}
             {status === 1 &&
                 <div id="category">
-                    <div className="card-container">
-                        {categoryData.length > 0 && <Link>{categoryItems}</Link>}
-                        <Link key={"AddForm"} onClick={() => { setModal(<ModalAddForm formData={collection} />) }}><AiOutlineFileAdd className="reacticons" /></Link>
+                    <div className="container">
+                        {categoryData.length > 0 &&
+                            <div className="cards">
+                                {categoryItems} 
+                                <Link key={"AddForm"} onClick={() => { setModal(<ModalAddForm path={collection} />) }}>
+                                    <AiOutlineFileAdd className="reacticons" />
+                                </Link>
+                            </div>}
                     </div>
-                    <Link to={"/"}>Go Back</Link>
+                    <Link to={"/"} className="back-btn">Go Back</Link>
                 </div>}
             {(status === 2) && <h1> Error </h1>}
         </div>

@@ -1,0 +1,42 @@
+[
+	{
+		"key": "BannerImage",
+		"id": "bannerimage",
+		"label": "Choose Banner image :",
+		"type": "file",
+		"accept": "image/png, image/jpeg, image/webp",
+		"required": false,
+		"autoFocus": true,
+		"multiple": false
+	},
+	{
+		"key": "ThumbnailImage",
+		"id": "thumbnailimage",
+		"label": "Choose Thumbnail for your video :",
+		"type": "file",
+		"accept": "image/png, image/jpeg, image/webp",
+		"required": false,
+		"autoFocus": true,
+		"multiple": false
+	},
+	{
+		"key": "Trailer",
+		"id": "trailer",
+		"label": "Upload Trailer :",
+		"type": "file",
+		"accept": "video/*",
+		"required": false,
+		"autoFocus": true,
+		"multiple": false
+	},
+	{
+		"key": "FullVideo",
+		"id": "fullvideo",
+		"label": "Upload Video :",
+		"type": "file",
+		"accept": "video/*",
+		"required": false,
+		"autoFocus": true,
+		"multiple": false
+	}
+]

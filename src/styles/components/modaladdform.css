@@ -3,13 +3,14 @@
     min-height: 100vh;
 }
 
-#AddForm>h1 {
+#AddForm>h1, .deletecategory>h1, .uploadmedia>h1, .updatecategory>h1 {
     background-color: var(--netflix-red);
     line-height: 1.5;
+    font-weight: 500;
 }
 
 .content-form {
-    width: 100%;
+    width: 50vw;
     margin: 35px auto;
 }
 
@@ -35,4 +36,10 @@
 .addform-btn:hover{
     background-color: var(--netflix-red);
     color: var(--color-white);
+}
+
+#AddForm>span, .updatecategory>span{
+    display: block;
+    font-size: 12px;
+    padding-top: 20px;
 }

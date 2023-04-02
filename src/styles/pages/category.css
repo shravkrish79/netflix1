@@ -1,26 +1,60 @@
 #category {
-    min-height: 60vh;
     width: 100%;
+    min-height: 40vh;
     text-align: center;
-    padding-top: 200px;
 }
 
-#category a{
+#category a {
     text-decoration: none;
-    color: var(--netflix-red);
-    padding: 1% 2%;
+    color: var(--color-white);
+}
+
+.container {
+    width: 60vw;
+    margin: 0 auto;
+    padding-top: 20%;
+}
+
+.cards {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 7vw;
+    margin-bottom: 7vw;
+}
+
+.cards::after {
+    content: '';
+    flex: auto;
+}
+
+.card-data,
+.container a {
+    position: relative;
+    height: 30vh;
+    width: 15vw;
     border: 1px solid var(--netflix-red);
 }
 
-#category a:hover{
-    color: var(--color-white);
-    background-color: var(--netflix-red);
-    border: 1px solid var(--color-white);
+.card-data img {
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;
+    z-index: -1;
 }
 
-#category .card-container{
-    justify-content: left;
-    gap: 50px;
+.card-data span {
+    position: absolute;
+    display: block;
+    top: 50%;
+    width: 100%;
+    z-index: 1;
 }
 
 .reacticons {
@@ -30,7 +64,57 @@
     color: var(--netflix-red);
 }
 
-.card-container a:hover>.reacticons {
+.container a:hover>.reacticons {
     color: var(--color-white);
+
 }
 
+.card-data:hover>span {
+    transform: scale(1.5);
+}
+
+.card-data:hover {
+    transform: translateY(-3%);
+    transition: all 0.2s ease-in-out;
+}
+
+.cards:last-child>a:hover,
+.back-btn:hover {
+    background-color: var(--netflix-red);
+    border: 1px solid var(--color-white);
+    transform: translateY(-3%);
+    transition: all 0.2s ease-in-out;
+}
+
+.card-link {
+    display: block;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+
+.modal-buttons {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 4;
+}
+
+.modal-buttons button {
+    height: 20px;
+    width: 20px;
+    margin: 0 2px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.back-btn {
+    padding: 1% 2%;
+    border: 1px solid var(--netflix-red);
+}

@@ -9,8 +9,12 @@ body {
     color: var(--color-white);
     min-height: 100vh;
     max-width: 100vw;
+    position: relative;
 }
 
+#root{
+    min-height: 100vh;
+}
 
 h1 {
     font-size: 32px;

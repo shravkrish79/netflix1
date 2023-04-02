@@ -1,24 +1,26 @@
+
 .overlay {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: var(--modal-black);
     z-index: 1000;
     overflow-y: auto;
 }
 
 .modalview {
     position: absolute;
-    top: 100%;
-    left: 45vw;
-    transform: translate(-20vw, -50%);
-    background-color: var(--modal-black);
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    background-color: var(--selected-black);
     color: var(--color-white);
     z-index: 1001;
-    width: 50vw;
-    min-height: 60vh;
+    min-width: 40vw;
+    min-height: 20vh;
+    margin: 15% auto 5% auto;
     border: 1px solid var(--netflix-red);
     text-align: center;
 }
@@ -32,4 +34,8 @@
     border: none;
     cursor: pointer;
     font-weight: 800;
+}
+
+.modalview-btn:hover{
+    background-color: var(--color-white);
 }

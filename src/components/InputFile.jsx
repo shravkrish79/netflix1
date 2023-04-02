@@ -25,10 +25,8 @@ export default function InputFile({ item, state }) {
     return (
         <label className="input-file" id={item.id}>
             <span> {item.label} </span>
-            {/* <div > */}
             {item.multiple ?
                 <input
-                    // className="input-file"
                     onChange={(event) => validateFileSize(event)}
                     id={item.key}
                     type={item.type}
@@ -39,7 +37,6 @@ export default function InputFile({ item, state }) {
                     multiple
                 /> :
                 <input
-                    // className="input-file"
                     onChange={(event) => validateFileSize(event)}
                     id={item.key}
                     type={item.type}
@@ -49,7 +46,6 @@ export default function InputFile({ item, state }) {
                     accept={item.accept}
                 />
             }
-            {/* </div> */}
         </label>
 
     );

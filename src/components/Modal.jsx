@@ -11,7 +11,6 @@ export default function Modal({ modalState }) {
 
     return ReactDOM.createPortal(
         <div className="overlay" >
-            {/* <div className={(location.pathname === "/admin/menu") ? "modalview" : "productview"}> */}
             <div className="modalview">
                 <button className="modalview-btn" onClick={() => setModal(null)}>X</button>
                 <div className="modal-content">{modal}</div>

@@ -1,5 +1,5 @@
 // Node modules
-import { collection, getDocs, addDoc, setDoc, doc, deleteDoc } from "firebase/firestore";
+import { collection, getDocs, addDoc, doc, deleteDoc, updateDoc } from "firebase/firestore";
 
 // Project files
 import { database } from "./firebaseSetup";
@@ -18,18 +18,42 @@ export async function readDocuments(collectionName) {
 
 
 export async function createDocument(collectionName, data) {
+  let result = { status: false, payload: null, message: "" };
+  try {
+    const documentPath = collection(database, collectionName);
+    const document = await addDoc(documentPath, data);
+    const payload = document.id;
+    result = { status: true, payload: payload, message: "Document created" };
+  } catch (error) {
+    result.message = error.code;
+  }
 
-  const documentPath = collection(database, collectionName);
-  const document = await addDoc(documentPath, data);
-  return document;
+  return result;
 }
 
 export async function updateDocument(collectionName, data, id) {
-  const documentPath = doc(database, collectionName, id);
-  await setDoc(documentPath, data);
+  let result = { status: false, payload: null, message: "" };
+  try {
+    const documentPath = doc(database, collectionName, id);
+    await updateDoc(documentPath, data);
+    result = { status: true, payload: null, message: `Document ${id} updated` };
+  } catch (error) {
+    console.log(error);
+    result.message = error.code;
+  }
+
+  return result;
 }
 
 export async function deleteDocument(collectionName, id) {
-  const documentPath = doc(database, collectionName, id);
-  await deleteDoc(documentPath);
+  let result = { status: false, payload: null, message: "" };
+  try {
+
+    const documentPath = doc(database, collectionName, id);
+    await deleteDoc(documentPath);
+    result = { status: true, payload: null, message: `Document ${id} deleted` };
+  } catch (error) {
+    result.message = error.code;
+  }
+  return result;
 }

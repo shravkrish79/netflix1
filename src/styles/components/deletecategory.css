@@ -1,0 +1,21 @@
+.deletecategory{
+    min-height: 10vh;
+    width: 40vw;
+    margin: 0 auto;
+}
+
+.deletecategory p{
+    margin: 25px;
+}
+
+.deletecategory button{
+    padding: 1% 2%;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.deletecategory button:hover{
+    background-color: var(--netflix-red);
+    color: var(--color-white);
+    border: 1px solid var(--color-white);
+}

@@ -11,9 +11,10 @@
     margin: auto;
     margin-top: 50px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
     align-content: center;
+    flex: wrap;
 }
 
 .card-container a {
@@ -34,3 +35,4 @@
     border: 1px solid var(--color-white);
     transform: translateY(-5%);
 }
+
