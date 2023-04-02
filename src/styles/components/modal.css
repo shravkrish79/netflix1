@@ -21,7 +21,6 @@
     min-height: 60vh;
     border: 1px solid var(--netflix-red);
     text-align: center;
-    overflow-y: auto;
 }
 
 .modalview-btn {

@@ -64,31 +64,11 @@
     "autoFocus": true
   },
   {
-    "key": "DuppedlLanguage",
-    "id": "duppedlanguage",
-    "label": "Dupped-Language :",
+    "key": "DubbedlLanguage",
+    "id": "dubbedlanguage",
+    "label": "Dubbed-Language :",
     "type": "text",
     "placeholder": "Ex:- English, Swedish, Tamil, Telugu, Malayalam",
-    "required": true,
-    "disabled": false,
-    "autoFocus": true
-  },
-  {
-    "key": "ReleasedDate",
-    "id": "releaseddate",
-    "label": "Released Date :",
-    "type": "datetime-local",
-    "placeholder": "",
-    "required": true,
-    "disabled": false,
-    "autoFocus": true
-  },
-  {
-    "key": "TimeLength",
-    "id": "timelength",
-    "label": "Time Length :",
-    "type": "text",
-    "placeholder": "1Hr. 30Mins.",
     "required": true,
     "disabled": false,
     "autoFocus": true
@@ -132,18 +112,8 @@
     "label": "Upload Trailer :",
     "type": "file",
     "accept": "video/*",
-    "required": false,
+    "required": true,
     "autoFocus": true,
     "multiple": false
-  },
-  {
-    "key": "FullVideo",
-    "id": "fullvideo",
-    "label": "Upload Video :",
-    "type": "file",
-    "accept": "video/*",
-    "required": false,
-    "autoFocus": true,
-    "multiple": false
-  }  
+  }
 ]

@@ -37,8 +37,9 @@ export default function Category() {
                 <div id="category">
                     <div className="card-container">
                         {categoryData.length > 0 && <Link>{categoryItems}</Link>}
-                        <Link key={"AddForm"} onClick={() => { setModal(<ModalAddForm formData={collection}/>) }}><AiOutlineFileAdd className="reacticons" /></Link>
+                        <Link key={"AddForm"} onClick={() => { setModal(<ModalAddForm formData={collection} />) }}><AiOutlineFileAdd className="reacticons" /></Link>
                     </div>
+                    <Link to={"/"}>Go Back</Link>
                 </div>}
             {(status === 2) && <h1> Error </h1>}
         </div>
