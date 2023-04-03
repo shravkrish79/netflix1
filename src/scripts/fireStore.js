@@ -1,5 +1,5 @@
 // Node modules
-import { collection, getDocs, addDoc, doc, deleteDoc, updateDoc } from "firebase/firestore";
+import { collection, getDocs, getDoc, addDoc, doc, deleteDoc, updateDoc } from "firebase/firestore";
 
 // Project files
 import { database } from "./firebaseSetup";
@@ -56,4 +56,17 @@ export async function deleteDocument(collectionName, id) {
     result.message = error.code;
   }
   return result;
+}
+
+
+export async function readDocument(collectionName,id){
+try{
+  const reference = doc(database, collectionName, id);
+  const document = await getDoc(reference);
+  const result = { id: document.id, ...document.data() };
+  return result;
+  
+}catch (err) {
+    console.error(err);
+  }
 }

@@ -10,17 +10,19 @@ export default function DeleteCategory({ path, id }) {
 
   // Method
   async function onConfirm() {
-    const result = await deleteDocument(path, id);
-
+    document.getElementById("delete-btn").disabled = true;
+    const result = await deleteDocument(path, id);    
     result.status ? onSuccess() : onFailure(result.message);
   }
 
   function onSuccess() {
     dispatch({ type: 'DELETE_ITEM', payload: id });
+    document.getElementById("delete-btn").disabled = false;
     setModal(null);
   }
 
   function onFailure(errorMessage) {
+    document.getElementById("delete-btn").disabled = false;
     alert(errorMessage);
   }
 
@@ -31,7 +33,7 @@ export default function DeleteCategory({ path, id }) {
         ℹ️ Warning, deleting the item is a permanent action. Press the button
         below if you are sure about it
       </p>
-      <button onClick={onConfirm}>Confirm</button>
+      <button onClick={onConfirm} id="delete-btn">Confirm</button>
     </div>
   );
 }

@@ -5,22 +5,22 @@ import { createContext, useContext, useReducer, useState } from "react";
 import itemsReducer from "./itemsReducer";
 
 // Properties
-const DataContext = createContext();
+const CategoryContext = createContext();
 
-export function DataProvider({ children }) {
+export function CategoryProvider({ children }) {
     // State
     const [categoryData, dispatch] = useReducer(itemsReducer, []);
     const [modal, setModal] = useState(null);
     // Properties
     const value = { categoryData, dispatch, modal, setModal };
 
-    return <DataContext.Provider value={value}>{children}</DataContext.Provider>;
+    return <CategoryContext.Provider value={value}>{children}</CategoryContext.Provider>;
 }
 
 export function useCategory() {
-    const context = useContext(DataContext);
+    const context = useContext(CategoryContext);
 
-    if (!context) throw new Error("useData is used inside <DataProvider>");
+    if (!context) throw new Error("useCategory is used inside <CategoryProvider>");
 
     return context;
 }

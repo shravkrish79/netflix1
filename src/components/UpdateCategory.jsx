@@ -15,16 +15,19 @@ export default function FormUpdate({ path, data }) {
     // Method
     async function onSubmit(event) {
         event.preventDefault();
+        document.getElementById("upate-form-btn").disabled = true;
         const result = await updateDocument(path, form,form.id);
         result.status ? onSuccess() : onFailure(result.message);
     }
 
     function onSuccess() {
         dispatch({ type: 'UPDATE_ITEM', payload: form });
+        document.getElementById("upate-form-btn").disabled = false;
         setModal(null);
     }
 
     function onFailure(errorMessage) {
+        document.getElementById("upate-form-btn").disabled = false;
         alert(errorMessage);
     }
 
@@ -38,8 +41,8 @@ export default function FormUpdate({ path, data }) {
             <span>Note: all * fields are mandatory</span>
             <form className="update-form" id="updateform" onSubmit={(event) => onSubmit(event)}>
                 <FormFieldGenerator data={formData} state={[form, setForm]} />
-                <button className="addform-btn" id="form-upate" >Update</button>
-                <button className="addform-btn" id="update-cancel" onClick={() => cancelform()}>Cancel</button>
+                <button className="addform-btn" id="upate-form-btn" >Update</button>
+                <button className="addform-btn" id="update-cancel-btn" onClick={() => cancelform()}>Cancel</button>
             </form>
         </div>
     );

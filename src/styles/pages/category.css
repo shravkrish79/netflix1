@@ -9,10 +9,10 @@
     color: var(--color-white);
 }
 
-.container {
+.container {    
     width: 60vw;
     margin: 0 auto;
-    padding-top: 20%;
+    padding-top: 15%;
 }
 
 .cards {

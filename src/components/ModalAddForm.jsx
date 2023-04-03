@@ -12,6 +12,7 @@ export default function ModalAddForm({ path }) {
     const data = (path === 'TVShows') ? SeriesData : MovieFormData;
     async function onSubmit(event) {
         event.preventDefault();
+        document.getElementById("addCourse-submit").disabled = true;
         const result = await createDocument(path, form);
         result.status ? onSuccess(result.payload) : onFailure(result.message);
     }
@@ -20,11 +21,14 @@ export default function ModalAddForm({ path }) {
     }
     function onSuccess(id) {
         dispatch({ type: 'CREATE_ITEM', payload: [form, id] });
+        document.getElementById("addCourse-submit").disabled = false;
         setModal(null);
+        
     }
 
     function onFailure(errorMessage) {
         alert(errorMessage);
+        document.getElementById("addCourse-submit").disabled = false;
     }
 
     return (
@@ -33,8 +37,10 @@ export default function ModalAddForm({ path }) {
             <span>Note: all * fields are mandatory</span>
             <form className="content-form" id="contentform" onSubmit={(event) => onSubmit(event)}>
                 <FormFieldGenerator data={data} state={[form, setForm]} />
-                <button className="addform-btn" id="addCourse-submit" >Create</button>
-                <button className="addform-btn" id="addCourse-cancel" onClick={() => cancelform()}>Cancel</button>
+                <div id="addform-btn-group">
+                    <button className="addform-btn" id="addCourse-submit" >Create</button>
+                    <button className="addform-btn" id="addCourse-cancel" onClick={() => cancelform()}>Cancel</button>
+                </div>
             </form>
 
         </div>

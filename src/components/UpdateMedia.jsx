@@ -19,6 +19,7 @@ export default function UpdateMedia({ path, data, imageKey }) {
     // Method
     async function onSubmit(event) {
         event.preventDefault();
+        document.getElementById("upload-media-btn").disabled = true;
         let updatedItem;
 
         for (var propName in form) {
@@ -46,10 +47,12 @@ export default function UpdateMedia({ path, data, imageKey }) {
 
     function onSuccess(updatedItem) {
         dispatch({ type: 'UPDATE_ITEM', payload: updatedItem });
+        document.getElementById("upload-media-btn").disabled = false;
         setModal(null);
     }
 
     function onFailure(errorMessage) {
+        document.getElementById("upload-media-btn").disabled = false;
         alert(errorMessage);
     }
 
@@ -62,8 +65,8 @@ export default function UpdateMedia({ path, data, imageKey }) {
             <h1>Upload Media Files</h1>
             <form className="media-form" id="mediaform" onSubmit={(event) => onSubmit(event)}>
                 <FormFieldGenerator data={FormData} state={[form, setForm]} />
-                <button className="media-btn" id="addCourse-submit" >Upload</button>
-                <button className="media-btn" id="addCourse-cancel" onClick={() => cancelform()}>Cancel</button>
+                <button className="media-btn" id="upload-media-btn" >Upload</button>
+                <button className="media-btn" id="cancel-media-btn" onClick={() => cancelform()}>Cancel</button>
             </form>
         </div>
     );

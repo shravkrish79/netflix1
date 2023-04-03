@@ -1,0 +1,32 @@
+[
+  {
+    "key": "SeasonNumber",
+    "id": "seasonnumber",
+    "label": "*Season Number :",
+    "type": "text",
+    "placeholder": "Ex:- Season 1",
+    "required": true,
+    "disabled": false,
+    "autoFocus": true
+  },
+  {
+    "key": "EpisodeNumber",
+    "id": "episodenumber",
+    "label": "*Episode Number :",
+    "type": "text",
+    "placeholder": "Ex:- Episode 1",
+    "required": true,
+    "disabled": false,
+    "autoFocus": true
+  },
+  {
+    "key": "EpisodeName",
+    "id": "episodename",
+    "label": "*Episode Title :",
+    "type": "text",
+    "placeholder": "Ex:- Episode 1",
+    "required": true,
+    "disabled": false,
+    "autoFocus": true
+  }  
+]
