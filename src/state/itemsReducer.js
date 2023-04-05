@@ -8,8 +8,8 @@ export default function itemsReducer(state, action) {
             return updateItem(state, action);
         case 'DELETE_ITEM':
             return deleteItem(state, action);
-		// case 'SET_ITEM':
-		// 	return setItem(action);            
+		case 'SET_ITEM':
+			return setItem(action);            
         default:
             throw new Error(`itemsReducer() unhandled action "${action.type}"`);
     }
@@ -28,8 +28,11 @@ function createItem(state, action) {
 function updateItem(state, action) {
     const updatedItem = action.payload;
     const newState = [...state];
+    console.log(newState.id);
+    console.log(updatedItem);
     const index = newState.findIndex((item) => item.id === updatedItem.id);
     newState[index] = updatedItem;
+    console.log(newState);
     return newState;
 }
 
@@ -39,7 +42,7 @@ function deleteItem(state, action) {
     return newState;
 }
 
-// function setItem(action) {
-// 	const newState = action.payload;
-//     return newState;
-// }
+function setItem(action) {
+	const newState = action.payload;
+    return newState;
+}

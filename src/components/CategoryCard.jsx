@@ -11,10 +11,10 @@ export default function CategoryCard({ path, categoryData }) {
     const { id, BannerImage, Title } = categoryData;
     const showname = Title.replace(/ /g,"");
     
-
+    // console.log(categoryData);
     // Global state
     const { setModal } = useCategory();
-    const { idDispatch } = useSeason();
+    const { saveCID,categoryDispatch } = useSeason();
 
     const DeleteItem = <DeleteCategory id={id} path={path} />;
     const UpdateMediaFile = <UpdateMedia data={categoryData} path={path}/>
@@ -22,10 +22,10 @@ export default function CategoryCard({ path, categoryData }) {
     // Properties
     const ImageSource = (BannerImage === null) ? Placeholder : BannerImage;
 
-    function setId(id){
-        idDispatch({ type: 'INIT_ITEM', payload: id });
+    function setCategoryID(id){
+        saveCID(id);
+        categoryDispatch({ type: "INIT_ITEM", payload: id });
     }
-
     return (
 
         <div className="card-data" >
@@ -37,7 +37,7 @@ export default function CategoryCard({ path, categoryData }) {
                 <button onClick={() => setModal(DeleteItem)}>❌</button>
             </div>
             {(path !=='TVShows') && <Link className="card-link"/>}
-            {(path ==='TVShows') && <Link className="card-link" to={`/tvshows/${showname}`} onClick={()=> setId(id)}/>}
+            {(path ==='TVShows') && <Link className="card-link" onClick={()=>setCategoryID(id)} to={`/tvshows/${showname}`} />}
         </div >
 
     )

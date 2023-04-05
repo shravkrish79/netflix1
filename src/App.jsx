@@ -15,7 +15,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<ContentManager />} />
         <Route path="/:category" element={<Category />} />
-        <Route path="/tvshows/:showid" element={<Seasons />} />
+        <Route path="/tvshows/:showname" element={<Seasons />} />
       </Routes>
       <Modal modalState={[modal, setModal]}  />
     </BrowserRouter>
