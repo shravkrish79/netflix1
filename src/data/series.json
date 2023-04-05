@@ -2,7 +2,7 @@
   {
     "key": "Title",
     "id": "movietitle",
-    "label": "*Movie/Documentary Title :",
+    "label": "*TV Shows Title :",
     "type": "text",
     "placeholder": "Ex:- Avatar(2009)",
     "required": true,

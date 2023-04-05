@@ -1,6 +1,6 @@
 #AddForm {
     text-align: center;
-    min-height: 100vh;
+    min-height: 20vh;
 }
 
 #AddForm>h1, .deletecategory>h1, .uploadmedia>h1, .updatecategory>h1 {

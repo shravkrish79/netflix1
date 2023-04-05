@@ -1,5 +1,5 @@
 // Node modules
-import { collection, getDocs, getDoc, addDoc, doc, deleteDoc, updateDoc } from "firebase/firestore";
+import { collection, getDocs, getDoc, addDoc, doc, setDoc, deleteDoc, updateDoc } from "firebase/firestore";
 
 // Project files
 import { database } from "./firebaseSetup";
@@ -24,6 +24,19 @@ export async function createDocument(collectionName, data) {
     const document = await addDoc(documentPath, data);
     const payload = document.id;
     result = { status: true, payload: payload, message: "Document created" };
+  } catch (error) {
+    result.message = error.code;
+  }
+
+  return result;
+}
+
+export async function createDocumentWithCustomId(collectionName, data, id) {
+  let result = { status: false, payload: null, message: "" };
+  try {
+    const documentPath = collection(database, collectionName);
+    await setDoc(doc(documentPath, id),data);
+    result = { status: true, payload: id, message: "subCollection Document created" };
   } catch (error) {
     result.message = error.code;
   }

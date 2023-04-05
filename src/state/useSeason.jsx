@@ -1,5 +1,5 @@
 // Node modules
-import { createContext, useContext, useReducer, useState } from "react";
+import { createContext, useContext, useReducer } from "react";
 
 // Project files
 import itemsReducer from "./itemsReducer";
@@ -9,10 +9,11 @@ const SeasonContext = createContext();
 
 export function SeasonProvider({ children }) {
     // State
-    const [seasonData, dispatch] = useReducer(itemsReducer, []);
-    const [modal, setModal] = useState(null);
+    const [seasonData, seasonDispatch] = useReducer(itemsReducer, []);
+    const [categoryId, idDispatch] = useReducer(itemsReducer, null);
+
     // Properties
-    const value = { seasonData, dispatch, modal, setModal };
+    const value = { seasonData, seasonDispatch, categoryId, idDispatch };
 
     return <SeasonContext.Provider value={value}>{children}</SeasonContext.Provider>;
 }

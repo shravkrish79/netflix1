@@ -1,32 +1,31 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { readDocument } from "../scripts/fireStore";
 import { AiOutlineFileAdd } from "react-icons/ai";
 import { useSeason } from "../state/useSeason";
 import SeasonItems from "../components/SeasonItems";
 import { useCategory } from "../state/useCategory";
+import SeasonAdd from "../components/SeasonAdd";
 
 export default function Seasons() {
-    const { seasonData, dispatch } = useSeason();
+    const { seasonData, seasonDispatch, categoryId } = useSeason();
     const {setModal} = useCategory();
     const [status, setStatus] = useState(0);
-    const Location = useLocation();
-    const CategoryId = Location.state.id;
+    
     const collection = 'TVShows';
-
-    // console.log(CategoryId);
+    const path = collection+'/'+categoryId+'/';
 
     useEffect(() => {
         loadData(collection);
     }, []);
+
     async function loadData(collection) {
-        const data = await readDocument(collection, CategoryId).catch(onFail);
+        const data = await readDocument(collection, categoryId).catch(onFail);
         onSuccess(data);
     }
 
     function onSuccess(data) {
-        // console.log(data);
-        dispatch({ type: "INIT_ITEM", payload: data });
+        seasonDispatch({ type: "INIT_ITEM", payload: data });
         setStatus(1);
     }
 
@@ -44,7 +43,7 @@ export default function Seasons() {
                     <div className="container">
                         <div className="cards">
                             {(seasonData) && SeasonCard}
-                            <Link key={"seasonAddForm"} onClick={() => { setModal(null) }}>
+                            <Link key={"seasonAddForm"} onClick={() => {setModal(<SeasonAdd path={path} data={seasonData}/>)} }>
                                 <AiOutlineFileAdd className="reacticons" />
                             </Link>
                         </div>

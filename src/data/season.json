@@ -4,7 +4,7 @@
     "id": "seasonnumber",
     "label": "*Season Number :",
     "type": "text",
-    "placeholder": "Ex:- Season 1",
+    "placeholder": "Ex:- Season1",
     "required": true,
     "disabled": false,
     "autoFocus": true
@@ -14,19 +14,48 @@
     "id": "episodenumber",
     "label": "*Episode Number :",
     "type": "text",
-    "placeholder": "Ex:- Episode 1",
+    "placeholder": "Ex:- Episode1",
     "required": true,
     "disabled": false,
     "autoFocus": true
   },
   {
-    "key": "EpisodeName",
-    "id": "episodename",
+    "key": "EpisodeTitle",
+    "id": "episodetitle",
     "label": "*Episode Title :",
     "type": "text",
-    "placeholder": "Ex:- Episode 1",
+    "placeholder": "Ex:- Halloween day!",
     "required": true,
     "disabled": false,
     "autoFocus": true
-  }  
+  },
+  {
+    "key": "EpisodeDesc",
+    "id": "episodedesc",
+    "label": "Episode Description :",
+    "type": "text",
+    "placeholder": "Ex:- It’s time to chase that holiday spirit with Tom and Jerry! ",
+    "required": false,
+    "disabled": false,
+    "autoFocus": true
+  },
+  {
+    "key": "EpisodeTime",
+    "id": "episodetime",
+    "label": "Episode Time Duration :",
+    "type": "text",
+    "placeholder": "Ex:- 23Mins. ",
+    "required": false,
+    "disabled": false,
+    "autoFocus": true
+  },
+  {
+    "key": "EpisodeReleaseDate",
+    "id": "episodereleasedate",
+    "label": "Episode Release Date :",
+    "type": "datetime-local",
+    "required": false,
+    "disabled": false,
+    "autoFocus": true
+  }   
 ]

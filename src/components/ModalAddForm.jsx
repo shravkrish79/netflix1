@@ -6,10 +6,16 @@ import SeriesData from "../data/series.json";
 import { useCategory } from "../state/useCategory";
 import { createDocument } from "../scripts/fireStore";
 
+
 export default function ModalAddForm({ path }) {
-    const [form, setForm] = useState((path === 'TVShows') ? InitialData[1] : InitialData[0]);
+    let formData, data;
+
+    if (path === 'TVShows') { formData = InitialData[1]; data=SeriesData;}
+    else if ((path === 'Movies')||(path === 'Documentaries')) { formData = InitialData[0]; data=MovieFormData;}
+    
+    const [form, setForm] = useState(formData);
     const { setModal, dispatch } = useCategory();
-    const data = (path === 'TVShows') ? SeriesData : MovieFormData;
+
     async function onSubmit(event) {
         event.preventDefault();
         document.getElementById("addCourse-submit").disabled = true;
@@ -22,10 +28,8 @@ export default function ModalAddForm({ path }) {
     function onSuccess(id) {
         dispatch({ type: 'CREATE_ITEM', payload: [form, id] });
         document.getElementById("addCourse-submit").disabled = false;
-        setModal(null);
-        
+        setModal(null);  
     }
-
     function onFailure(errorMessage) {
         alert(errorMessage);
         document.getElementById("addCourse-submit").disabled = false;

@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom";
 // import { useLocation } from "react-router-dom";
 
-export default function Modal({ modalState }) {
+export default function Modal({ modalState, id }) {
     const [modal, setModal] = modalState;
     // const location = useLocation();
 
