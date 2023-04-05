@@ -31,10 +31,8 @@ export default function SeasonAdd({ path, data }) {
         setModal(null);
     }
     function onSuccess(id, updatedSeason) {
-        console.log(seasonData);
         episodeDispatch({ type: 'CREATE_ITEM', payload: [form, id] });
         seasonDispatch({ type: 'UPDATE_ITEM', payload: updatedSeason });
-        console.log(seasonData);
         document.getElementById("addSeason-submit").disabled = false;
         setModal(null);
     }

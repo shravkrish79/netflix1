@@ -28,11 +28,8 @@ function createItem(state, action) {
 function updateItem(state, action) {
     const updatedItem = action.payload;
     const newState = [...state];
-    console.log(newState.id);
-    console.log(updatedItem);
     const index = newState.findIndex((item) => item.id === updatedItem.id);
     newState[index] = updatedItem;
-    console.log(newState);
     return newState;
 }
 

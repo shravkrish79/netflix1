@@ -34,9 +34,9 @@ export default function Seasons() {
         setStatus(2);
     }
 
-    console.log(seasonData[0]);
+    // console.log(seasonData[0]);
     // const SeasonCard = (status === 1) && seasonData.Seasons.map((recs) => <SeasonItems key={recs} recs={recs} seasonData={seasonData} path={collection} />);
-    const SeasonCard = (status === 1) && seasonData.map((recs) => recs.Seasons.map((itm) => <SeasonItems key={itm} recs={itm} seasonData={recs} path={collection} />));
+    const SeasonCard = (status === 1) && seasonData.map((recs) => recs.Seasons.map((itm) => <SeasonItems key={itm} recs={itm} seasonData={recs} path={path+itm} />));
     return (
         <div>
             {(status === 0) && <h1> Loading... </h1>}
