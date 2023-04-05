@@ -8,34 +8,35 @@ import { useCategory } from "../state/useCategory";
 import { useEpisode } from "../state/useEpisode";
 
 
-export default function ModalAddForm({ path, data }) {
-    let updatedSeason = [data];
+export default function SeasonAdd({ path, data }) {
+    let updatedSeason = data;
     const [form, setForm] = useState(InitialData[3]);
-    const {episodeDispatch} = useEpisode();
-    const {seasonDispatch} = useSeason();
-    const { setModal} = useCategory();
+    const { episodeDispatch } = useEpisode();
+    const { seasonData, seasonDispatch } = useSeason();
+    const { setModal } = useCategory();
 
     async function onSubmit(event) {
         event.preventDefault();
-        // document.getElementById("addSeason-submit").disabled = true;
-        console.log(updatedSeason);
-        console.log(data);
-        path=path+form.SeasonNumber;
-        updatedSeason = [...updatedSeason, {Seasons:[...updatedSeason.Seasons, form.SeasonNumber]}];
-        const result1 = await updateDocument('tvshows', updatedSeason,data.id);
+        document.getElementById("addSeason-submit").disabled = true;
+
+        path = path + form.SeasonNumber;
+        updatedSeason = { ...updatedSeason, Seasons: [...new Set([...updatedSeason.Seasons, form.SeasonNumber])] };
+
+        const result1 = await updateDocument('TVShows', updatedSeason, data.id);
         const result = await createDocumentWithCustomId(path, form, form.EpisodeNumber);
 
-        (result.status && result1.status) ? onSuccess(result.payload) : onFailure(result.message);
+        (result.status && result1.status) ? onSuccess(result.payload, updatedSeason) : onFailure(result.message);
     }
     function cancelform() {
         setModal(null);
     }
-    function onSuccess(id) {
+    function onSuccess(id, updatedSeason) {
+        console.log(seasonData);
         episodeDispatch({ type: 'CREATE_ITEM', payload: [form, id] });
         seasonDispatch({ type: 'UPDATE_ITEM', payload: updatedSeason });
+        console.log(seasonData);
         document.getElementById("addSeason-submit").disabled = false;
         setModal(null);
-        
     }
 
     function onFailure(errorMessage) {
