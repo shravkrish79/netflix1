@@ -1,0 +1,51 @@
+#navbar{
+    position: fixed;
+    height: 100px;  
+    width: 100%;
+    margin: auto 60px;
+    display: flex;
+    align-items: center;
+}
+#navbar a{
+    text-decoration: none;
+    color: var(--color-white);
+    text-align: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+#navbar img{
+    height: 35px;
+    width: 95px;
+    margin-right: 60px;
+    cursor: pointer;
+}
+
+#navbar ul li{
+    list-style: none;
+    display: inline;
+}
+
+#navbar .menu{
+    width: 50%;
+}
+
+#navbar ul li a{
+    padding: 2%;
+}
+
+#navbar .reacticons{
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    margin-right:0px;
+    margin-top: -30px;
+    /* color: var(--color-black); */
+}
+
+#navbar label{
+    height: 50px;
+    min-width: 50px;
+}
+

@@ -30,11 +30,8 @@ export default function DeleteCategory({ path, id, deleteType }) {
         let season = path.split("/").slice(-1).toString();
         let updatedSeason = seasonData[0];
         const seasons = updatedSeason.Seasons.filter((itm) => itm !== season);
-        console.log(seasons)
         updatedSeason = { ...updatedSeason, Seasons: seasons };
-        console.log(updatedSeason)
         const updateresult = await updateDocument('TVShows', updatedSeason, updatedSeason.id);
-        console.log(updateresult)
         if (updateresult) { seasonDispatch({ type: 'UPDATE_ITEM', payload: updatedSeason }); }
       }
     }
