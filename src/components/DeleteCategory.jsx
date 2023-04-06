@@ -1,24 +1,46 @@
 // Project files
-import { deleteDocument } from "../scripts/fireStore";
+import { deleteDocument, updateDocument } from "../scripts/fireStore";
 import { useCategory } from "../state/useCategory";
+import { useEpisode } from "../state/useEpisode";
+import { useSeason } from "../state/useSeason";
+import { useNavigate } from "react-router-dom";
 
-
-export default function DeleteCategory({ path, id }) {
+export default function DeleteCategory({ path, id, deleteType }) {
   // Global state
-  const { setModal,dispatch } = useCategory();
-  
+  const { setModal, dispatch } = useCategory();
+  const { seasonData, seasonDispatch } = useSeason();
+  const { episodeData, episodeDispatch } = useEpisode();
+  const Navigate = useNavigate();
+  const showname = seasonData[0].Title.replace(/ /g, "");
 
   // Method
   async function onConfirm() {
     document.getElementById("delete-btn").disabled = true;
-    const result = await deleteDocument(path, id);    
+    const result = await deleteDocument(path, id);
+
     result.status ? onSuccess() : onFailure(result.message);
   }
 
-  function onSuccess() {
-    dispatch({ type: 'DELETE_ITEM', payload: id });
+  async function onSuccess() {
+    if (deleteType === 'Category') { dispatch({ type: 'DELETE_ITEM', payload: id }); }
+    if (deleteType === 'Episode') {
+      var documentCount = episodeData.length;
+      episodeDispatch({ type: 'DELETE_ITEM', payload: id });
+      if (documentCount === 1) {
+        let season = path.split("/").slice(-1).toString();
+        let updatedSeason = seasonData[0];
+        const seasons = updatedSeason.Seasons.filter((itm) => itm !== season);
+        console.log(seasons)
+        updatedSeason = { ...updatedSeason, Seasons: seasons };
+        console.log(updatedSeason)
+        const updateresult = await updateDocument('TVShows', updatedSeason, updatedSeason.id);
+        console.log(updateresult)
+        if (updateresult) { seasonDispatch({ type: 'UPDATE_ITEM', payload: updatedSeason }); }
+      }
+    }
     document.getElementById("delete-btn").disabled = false;
     setModal(null);
+    Navigate(`/tvshows/${showname}`)
   }
 
   function onFailure(errorMessage) {

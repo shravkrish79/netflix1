@@ -4,11 +4,13 @@ import { updateDocument } from "../scripts/fireStore";
 import FormFieldGenerator from "../components/FormFieldGenerator";
 import MovieFormData from "../data/movies.json";
 import SeriesData from "../data/series.json";
+import SeasonData from "../data/season.json";
 
-export default function FormUpdate({ path, data }) {
+export default function FormUpdate({ path, data, updatetype }) {
     // Global state
     const { setModal, dispatch } = useCategory();
-    const formData = (path === 'TVShows') ? SeriesData : MovieFormData;
+    let formData = (path === 'TVShows') ? SeriesData : MovieFormData;
+    if(updatetype==='Episode'){formData=SeasonData}
     // Local state
     const [form, setForm] = useState(data);
 

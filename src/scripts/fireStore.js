@@ -1,5 +1,5 @@
 // Node modules
-import { collection, getDocs, getDoc, addDoc, doc, setDoc, deleteDoc, updateDoc } from "firebase/firestore";
+import { collection, getDocs, getDoc, addDoc, doc, setDoc, deleteDoc, updateDoc, getCountFromServer } from "firebase/firestore";
 
 // Project files
 import { database } from "./firebaseSetup";
@@ -103,3 +103,8 @@ export async function deleteCollection(collectionName) {
 }
 
 
+export async function getDocumentCount(collectionName){
+  const collectionRef = collection(database, collectionName);
+  const documentCount = await getCountFromServer(collectionRef);
+  return documentCount;
+}

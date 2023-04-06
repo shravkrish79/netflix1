@@ -12,7 +12,7 @@ export default function SeasonAdd({ path, data }) {
     let updatedSeason = data;
     const [form, setForm] = useState(InitialData[3]);
     const { episodeDispatch } = useEpisode();
-    const { seasonData, seasonDispatch } = useSeason();
+    const { seasonDispatch } = useSeason();
     const { setModal } = useCategory();
 
     async function onSubmit(event) {

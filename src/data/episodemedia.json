@@ -1,0 +1,22 @@
+[
+	{
+		"key": "EpisodeImage",
+		"id": "episodeimage",
+		"label": "Choose Thumbnail for your video :",
+		"type": "file",
+		"accept": "image/png, image/jpeg, image/webp",
+		"required": false,
+		"autoFocus": true,
+		"multiple": false
+	},
+	{
+		"key": "EpisodeVideo",
+		"id": "episodevideo",
+		"label": "Upload Video :",
+		"type": "file",
+		"accept": "video/*",
+		"required": false,
+		"autoFocus": true,
+		"multiple": false
+	}
+]
