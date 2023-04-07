@@ -16,6 +16,7 @@ export default function App() {
     <BrowserRouter>
       <Navbar/>
         <Routes>
+          
           <Route path="/" element={<ContentManager />} />
           <Route path="/:category" element={<Category />} />
           <Route path="/tvshows/:showname" element={<Seasons />} />
