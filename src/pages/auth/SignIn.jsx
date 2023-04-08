@@ -38,6 +38,7 @@ export default function SignIn() {
         }
         document.getElementById("login-btn").disabled = false;
     }
+    
     function onFailure(result) {
         alert(`Cannot login to the account, ${result.message}`);
         document.getElementById("login-btn").disabled = false;

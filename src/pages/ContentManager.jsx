@@ -7,7 +7,7 @@ export default function ContentManager() {
     const categoryList = CategoryData.map((item) => <Link key={item.id} to={`/${item.path}`}>{item.name}</Link>);
     return (
         <div id="contentmanager">
-            <h1> What do you want to add? </h1>
+            <h1> Hello Admin, What do you want to add? </h1>
             <div className="card-container">
                 {categoryList}
             </div>

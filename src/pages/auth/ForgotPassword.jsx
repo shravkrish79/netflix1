@@ -2,13 +2,31 @@ import Logo from "../../assets/images/netflix-logo.svg";
 import ForgotPasswordFields from "../../data/profile.json";
 import FormFieldGenerator from "../../components/FormFieldGenerator";
 import { useState } from "react";
+import { recoverAccount } from "../../scripts/auth";
+import { useNavigate } from "react-router-dom";
 
 export default function ForgotPassword() {
     const data = ForgotPasswordFields.filter((recs) => recs.key === 'Email');
-    const [form, setForm] = useState({ Email: "", Password: "" });
+    const [form, setForm] = useState({ Email: "" });
+    const Navigate = useNavigate();
 
-    function onSubmit(event) {
+    async function onSubmit(event) {
+        event.preventDefault();
+        document.getElementById("forgotpassword-btn").disabled = true;
+        const result = await recoverAccount(form.Email);
+        result.status ? onSuccess() : onFailure(result);
+    }
 
+    function onSuccess() {
+        const text = "Email with a reset link sent. Please check your SPAM/Junk folder as well.";
+        alert(text);
+        document.getElementById("forgotpassword-btn").disabled = false;
+        Navigate("/");
+    }
+
+    function onFailure(result) {
+        alert(result.message);
+        document.getElementById("forgotpassword-btn").disabled = false;
     }
 
     return (
