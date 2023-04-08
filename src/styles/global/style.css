@@ -1,6 +1,9 @@
 @import "./variable.css";
 @import "./app.css";
 
+@import "../pages/signin.css";
+@import "../pages/signup.css";
+
 @import "../components/navbar.css";
 
 @import "../pages/contentmanager.css";

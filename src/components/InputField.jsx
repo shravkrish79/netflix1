@@ -20,7 +20,7 @@ export default function InputField({ item, state }) {
 }
 
   return (
-    <label className="input-field" id={item.id}>
+    <label className="input-field" id={item.key}>
      <span> {item.label} </span>
         <input
           // State
@@ -29,7 +29,7 @@ export default function InputField({ item, state }) {
             setForm({ ...form, [formKey]: event.target.value })
           }
           // Common properties
-          id={item.key} type={item.type}
+          id={item.id} type={item.type}
           required={item.required} disabled={item.disabled} placeholder={item.placeholder}
           // Specific properties
           maxLength={item.maxLength} minLength={item.minLength}

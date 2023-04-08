@@ -1,0 +1,87 @@
+#signup{
+    background-color: var(--color-white);
+    min-height: 100vh;
+    width: 100%;
+}
+
+#signup img{
+    height:120px;
+    width: 250px;
+    margin:0;
+    padding: 0;
+}
+
+#signup a{
+    text-decoration: none;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    align-items: center;
+}
+
+.header{
+    width: 95%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header a{
+    margin: 30px 60px;
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--color-black);
+}
+
+.header a:hover:last-child{
+    border-bottom: 1px solid var(--color-black);
+}
+
+#signup .signup-container{
+
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 1);
+    color: var(--color-black);
+    gap: 5px;
+    width: 25vw;
+}
+
+#signup .signup-container h1{
+    text-align: justify;
+    margin: 0;
+    font-size: 40px;
+}
+
+#signup .signup-container p{
+    font-size: 26px;
+}
+
+#signup label{
+    width: 100%;
+    height: 100px;
+    
+}
+
+#signup input{
+    height: 60px;
+}
+
+
+.signup-btn{
+    margin-top: 30px;
+    padding: 3%;
+    font-size: 32px;
+    width: 100%;
+    background-color: var(--netflix-red);
+    color: var(--color-white);
+    cursor: pointer;
+}
+
+.signup-form{
+    margin-top: 50px;
+}

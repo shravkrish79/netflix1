@@ -3,7 +3,7 @@ import Logo from "../assets/images/netflix-logo.svg";
 import { GoSearch } from "react-icons/go";
 import { MdOutlineNotificationsNone } from "react-icons/md";
 import userIcon from "../assets/netflix-profile-icons/216 - 6FgZxbi.png";
-import {Link} from "react-router-dom";
+
 
 
 export default function Navbar() {
@@ -19,9 +19,9 @@ export default function Navbar() {
             <div className="menu">
                 <ul>
                     <li><a href=".">Home</a></li>
-                    <li><Link to={"/movies"}>Movies</Link></li>
-                    <li><Link to={"/tvshows"}>TV Shows</Link></li>
-                    <li><Link to={"/documentary"}> Documentaries</Link></li>
+                    <li><a href={"/movies"}>Movies</a></li>
+                    <li><a href={"/tvshows"}>TV Shows</a></li>
+                    <li><a href={"/documentary"}> Documentaries</a></li>
                 </ul>
             </div>
             <div className="searchbox">
