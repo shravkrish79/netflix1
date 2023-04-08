@@ -96,6 +96,15 @@
     border-bottom: 1px solid var(--color-white);
 }
 
+#signin .login-help {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    height: 25px;
+    margin-top: 25px;
+}
+
 #signin .login-help input {
     height: 15px;
     width: 15px;
@@ -111,11 +120,3 @@
     line-height: 1;
 }
 
-#signin .login-help {
-    display: flex;
-    align-items: center;
-    align-content: center;
-    justify-content: space-between;
-    height: 25px;
-    margin-top: 25px;
-}

@@ -28,7 +28,7 @@ export default function SignIn() {
                         <label for="remember-chk">
                             <input type="checkbox" id="remember-chk" name="remember-chk" />
                             Remember me</label>
-                        <a href=".">Forgot Password?</a>
+                        <a href="/forgotpassword">Forgot Password?</a>
                     </div>
                     <div className="box-link">
                         <span>New to Netflix? <a href="/signup">Sign up now</a></span>
