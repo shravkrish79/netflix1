@@ -38,7 +38,7 @@ export default function DeleteCategory({ path, id, deleteType }) {
     }
     document.getElementById("delete-btn").disabled = false;
     setModal(null);
-    if (deleteType === 'Episode') {Navigate(`/tvshows/${showname}`)}    
+    if (deleteType === 'Episode' && documentCount===1 ) {Navigate(`/tvshows/${showname}`)}    
   }
 
   function onFailure(errorMessage) {
