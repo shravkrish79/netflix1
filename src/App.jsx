@@ -1,23 +1,21 @@
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Modal from "./components/Modal";
-import { useCategory } from "./state/useCategory";
 import "./styles/global/style.css";
 
-import SignIn from "./pages/auth/SignIn";
-import Signup from "./pages/auth/Signup";
-import ForgotPassword from "./pages/auth/ForgotPassword";
+import { BrowserRouter } from "react-router-dom";
+import Modal from "./components/Modal";
+import { useCategory } from "./state/useCategory";
+import { useUser } from "./state/useUser";
+import LoggedRoutes from "./routes/LoggedRoutes";
+import UnLoggedRoutes from "./routes/UnLoggedRoutes";
 
 
 export default function App() {
+  const { uid } = useUser();
+
   const { modal, setModal } = useCategory();
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<SignIn />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/forgotpassword" element={<ForgotPassword />} />
-      </Routes>
+      {uid ? <LoggedRoutes /> : <UnLoggedRoutes />}
       <Modal modalState={[modal, setModal]} />
     </BrowserRouter>
   );

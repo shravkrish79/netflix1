@@ -3,13 +3,44 @@ import Background from "../../assets/images/background-img.jpg";
 import SignInFields from "../../data/profile.json";
 import FormFieldGenerator from "../../components/FormFieldGenerator";
 import { useState } from "react";
+import { login } from "../../scripts/auth";
+import { useProfile } from "../../state/useProfile";
+import { useUser } from "../../state/useUser";
+import { useNavigate } from "react-router-dom";
 
 export default function SignIn() {
     const data = SignInFields.filter((recs) => recs.key === 'Email' || recs.key === 'Password');
     const [form, setForm] = useState({ Email: "", Password: "" });
+    const { setUid, saveUID, setIsAdmin, saveAdmin } = useUser();
+    const Navigate = useNavigate();
+    const { profileData } = useProfile();
 
-    function onSubmit(event) {
 
+    async function onSubmit(event) {
+        event.preventDefault();
+        document.getElementById("login-btn").disabled = true;
+        const result = await login(form.Email, form.Password);
+        result.status ? onSuccess(result) : onFailure(result);
+    }
+
+    function onSuccess(result) {
+        const profile = profileData.find((item) => item.uid === result.payload);
+
+        if (profile !== undefined) {
+            setIsAdmin(profile.isTeacher);
+            saveAdmin(profile.isTeacher);
+            setUid(result.payload);
+            saveUID(result.payload);
+            Navigate("/");
+        }
+        else {
+            alert('Profile Data is not updated. please refresh the home page.');
+        }
+        document.getElementById("login-btn").disabled = false;
+    }
+    function onFailure(result) {
+        alert(`Cannot login to the account, ${result.message}`);
+        document.getElementById("login-btn").disabled = false;
     }
 
     return (

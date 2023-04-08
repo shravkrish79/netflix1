@@ -24,7 +24,7 @@ export default function ForgotPassword() {
                         <p>We will send you an email with instructions on how to reset your password.</p>
                         <form className="forgotpassword-form" onSubmit={(event) => onSubmit(event)}>
                             <FormFieldGenerator data={data} state={[form, setForm]} />
-                            <button className="forgotpassword-btn" id="forgotpassword-btn">Sign In</button>
+                            <button className="forgotpassword-btn" id="forgotpassword-btn">Submit</button>
                         </form>
                     </div>
                 </div>
