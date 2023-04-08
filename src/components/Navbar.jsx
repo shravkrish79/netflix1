@@ -20,7 +20,7 @@ export default function Navbar() {
         setToggle(!toggle);
     }
 
-    console.log(profile);
+    // console.log(profile);
 
     function onLogout() {
         saveUID("");

@@ -11,7 +11,8 @@ export default function DeleteCategory({ path, id, deleteType }) {
   const { seasonData, seasonDispatch } = useSeason();
   const { episodeData, episodeDispatch } = useEpisode();
   const Navigate = useNavigate();
-  const showname = seasonData[0].Title.replace(/ /g, "");
+  
+  const showname = seasonData.length>0 && seasonData[0].Title.replace(/ /g, "");
 
   // Method
   async function onConfirm() {
@@ -37,7 +38,7 @@ export default function DeleteCategory({ path, id, deleteType }) {
     }
     document.getElementById("delete-btn").disabled = false;
     setModal(null);
-    Navigate(`/tvshows/${showname}`)
+    if (deleteType === 'Episode') {Navigate(`/tvshows/${showname}`)}    
   }
 
   function onFailure(errorMessage) {

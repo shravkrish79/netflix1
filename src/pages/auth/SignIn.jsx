@@ -56,7 +56,6 @@ export default function SignIn() {
                         <button className="login-btn" id="login-btn">Sign In</button>
                     </form>
                     <div className="login-help">
-
                         <label for="remember-chk">
                             <input type="checkbox" id="remember-chk" name="remember-chk" />
                             Remember me</label>
