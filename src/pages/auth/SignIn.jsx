@@ -15,10 +15,11 @@ export default function SignIn() {
     const Navigate = useNavigate();
     const { profileData } = useProfile();
 
-
     async function onSubmit(event) {
         event.preventDefault();
         document.getElementById("login-btn").disabled = true;
+          
+        console.log(form);
         const result = await login(form.Email, form.Password);
         result.status ? onSuccess(result) : onFailure(result);
     }
@@ -27,8 +28,8 @@ export default function SignIn() {
         const profile = profileData.find((item) => item.uid === result.payload);
 
         if (profile !== undefined) {
-            setIsAdmin(profile.isTeacher);
-            saveAdmin(profile.isTeacher);
+            setIsAdmin(profile.isAdmin);
+            saveAdmin(profile.isAdmin);
             setUid(result.payload);
             saveUID(result.payload);
             Navigate("/");
@@ -38,7 +39,7 @@ export default function SignIn() {
         }
         document.getElementById("login-btn").disabled = false;
     }
-    
+
     function onFailure(result) {
         alert(`Cannot login to the account, ${result.message}`);
         document.getElementById("login-btn").disabled = false;
@@ -56,7 +57,7 @@ export default function SignIn() {
                         <button className="login-btn" id="login-btn">Sign In</button>
                     </form>
                     <div className="login-help">
-                        <label for="remember-chk">
+                        <label htmlFor="remember-chk">
                             <input type="checkbox" id="remember-chk" name="remember-chk" />
                             Remember me</label>
                         <a href="/forgotpassword">Forgot Password?</a>
