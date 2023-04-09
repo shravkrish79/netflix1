@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { readDocuments } from "../scripts/fireStore";
 import { useCategory } from "../state/useCategory";
 import RandomBanner from "../components/display/RandomBanner";
+import DisplayCard from "../components/display/DisplayCard";
 
 export default function DisplayPage() {
     const { displayData, setDisplayData } = useCategory();
@@ -20,7 +21,7 @@ export default function DisplayPage() {
 
 
     function onSuccess(data, collectionName) {
-        const newItem = { [collectionName]: data }
+        const newItem = { id: collectionName, dataList : data }
         // console.log(data)
         setDisplayData({ type: 'APPEND_ITEM', payload: newItem });
         setStatus(1)
@@ -36,11 +37,13 @@ export default function DisplayPage() {
     if (status === 2) { return <h1>Error while data pull</h1> }
 
     const RandomItem = <RandomBanner />
+    const Cards = <DisplayCard/>
     return (
         <div>
             {(status === 1) && (displayData.length > 0) &&
                 <div id="displaypage">
                     {RandomItem}
+                    {Cards}
                 </div>
             }
         </div>

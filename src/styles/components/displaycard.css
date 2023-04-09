@@ -1,0 +1,40 @@
+#displaycard{
+    /* border: 1px solid var(--netflix-red); */
+    min-height: 80vh;
+}
+
+#displaycard ul{
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    gap:50px;
+}
+
+#displaycard ul li{
+    list-style: none;
+    font-size: 28px;
+    height: 25vh;
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap:25px;
+}
+
+.content-cards{
+    display: flex;
+    gap: 20px;
+    height: 100%;
+    min-width: 100%;
+    overflow-x: visible;
+    
+}
+
+.content-cards img{
+    height:20vh;
+    width: 450px;
+    border-radius: 10px;
+}
+
+.content-cards img:hover{
+ transform: scale(125%);
+}

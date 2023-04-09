@@ -3,7 +3,9 @@ import { FaPlay, FaInfoCircle } from "react-icons/fa";
 
 export default function RandomBanner() {
     const { displayData } = useCategory();
-    const data = displayData[0].Movies[0];
+    const data = displayData[0].dataList[0];
+    // const data =  displayData.map(itm=> { (itm.id === 'Movies') && itm.dataList.map(recs => recs).filter(idx => idx === 0 )});
+    
 
 
     return (
