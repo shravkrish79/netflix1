@@ -10,9 +10,10 @@ const CategoryContext = createContext();
 export function CategoryProvider({ children }) {
     // State
     const [categoryData, dispatch] = useReducer(itemsReducer, []);
+    const [displayData, setDisplayData] = useReducer(itemsReducer, []);
     const [modal, setModal] = useState(null);
     // Properties
-    const value = { categoryData, dispatch, modal, setModal };
+    const value = { categoryData, dispatch, modal, setModal,displayData, setDisplayData};
 
     return <CategoryContext.Provider value={value}>{children}</CategoryContext.Provider>;
 }

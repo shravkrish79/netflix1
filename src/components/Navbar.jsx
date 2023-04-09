@@ -33,7 +33,7 @@ export default function Navbar() {
 
     return (
         <div id="navbar">
-            <img src={Logo} alt="netflix" />
+            <a href="/"><img src={Logo} alt="netflix" /></a>
             <div className="menu">
                 <ul>
                     <li><a href=".">Home</a></li>

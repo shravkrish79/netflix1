@@ -7,6 +7,7 @@
 
 @import "../components/navbar.css";
 
+@import "../pages/displaypage.css";
 @import "../pages/contentmanager.css";
 @import "../pages/category.css";
 @import "../pages/season.css";

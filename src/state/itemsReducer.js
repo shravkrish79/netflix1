@@ -8,8 +8,10 @@ export default function itemsReducer(state, action) {
             return updateItem(state, action);
         case 'DELETE_ITEM':
             return deleteItem(state, action);
-		case 'SET_ITEM':
-			return setItem(action);            
+        case 'APPEND_ITEM':
+            return appendItem(state, action);
+        case 'SET_ITEM':
+            return setItem(action);
         default:
             throw new Error(`itemsReducer() unhandled action "${action.type}"`);
     }
@@ -40,6 +42,13 @@ function deleteItem(state, action) {
 }
 
 function setItem(action) {
-	const newState = action.payload;
+    const newState = action.payload;
+    return newState;
+}
+
+function appendItem(state, action) {
+    const newObj = action.payload;
+    const newState = [...state, newObj];
+    
     return newState;
 }

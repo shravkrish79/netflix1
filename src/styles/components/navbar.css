@@ -5,18 +5,19 @@
     margin: auto 60px;
     display: flex;
     align-items: center;
+    z-index: 1500;
 }
 #navbar a{
     text-decoration: none;
     color: var(--color-white);
     text-align: center;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 26px;
     font-weight: 400;
 }
 
 #navbar img{
-    height: 35px;
+    height: 45px;
     width: 95px;
     margin-right: 60px;
     cursor: pointer;
@@ -32,7 +33,7 @@
 }
 
 #navbar ul li a{
-    padding: 2%;
+    margin: 2%;
 }
 
 #navbar ul li a:hover{
