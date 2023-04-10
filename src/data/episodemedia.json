@@ -13,7 +13,7 @@
 		"key": "EpisodeVideo",
 		"id": "episodevideo",
 		"label": "Upload Video :",
-		"type": "file",
+		"type": "text",
 		"accept": "video/*",
 		"required": false,
 		"autoFocus": true,

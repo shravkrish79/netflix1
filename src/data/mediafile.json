@@ -22,8 +22,8 @@
 	{
 		"key": "Trailer",
 		"id": "trailer",
-		"label": "Upload Trailer :",
-		"type": "file",
+		"label": "Upload Trailer URL:",
+		"type": "text",
 		"accept": "video/*",
 		"required": false,
 		"autoFocus": true,
@@ -32,8 +32,8 @@
 	{
 		"key": "FullVideo",
 		"id": "fullvideo",
-		"label": "Upload Video :",
-		"type": "file",
+		"label": "Upload Video URL:",
+		"type": "text",
 		"accept": "video/*",
 		"required": false,
 		"autoFocus": true,

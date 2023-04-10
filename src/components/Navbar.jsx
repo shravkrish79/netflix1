@@ -36,7 +36,7 @@ export default function Navbar() {
             <a href="/"><img src={Logo} alt="netflix" /></a>
             <div className="menu">
                 <ul>
-                    <li><a href=".">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li><a href={"/movies"}>Movies</a></li>
                     <li><a href={"/tvshows"}>TV Shows</a></li>
                     <li><a href={"/documentaries"}> Documentaries</a></li>

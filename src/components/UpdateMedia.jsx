@@ -16,40 +16,47 @@ import { useEpisode } from "../state/useEpisode";
 export default function UpdateMedia({ path, data, updatemediatype }) {
     // Global state
     const { setModal, dispatch } = useCategory();
-    let formData,formFields;
+    let formData, formFields;
 
-    if(updatemediatype==='Category'){formData=InitialData[2]; formFields=CategoryForm;}
-    if(updatemediatype==='Episode'){formData=InitialData[4]; formFields = EpisodeForm}
+    if (updatemediatype === 'Category') { formData = InitialData[2]; formFields = CategoryForm; }
+    if (updatemediatype === 'Episode') { formData = InitialData[4]; formFields = EpisodeForm }
     const [form, setForm] = useState(formData);
-    const {seasonData} = useSeason();
-    const {episodeDispatch}=useEpisode();
+    const { seasonData } = useSeason();
+    const { episodeDispatch } = useEpisode();
 
     // Method
     async function onSubmit(event) {
         event.preventDefault();
-        document.getElementById("upload-media-btn").disabled = true;
+        // document.getElementById("upload-media-btn").disabled = true;
         let updatedItem;
 
         for (var propName in form) {
             let result;
             const files = form[propName];
-            if (files) {
+            
+            if ((files) && (propName !== "Trailer") && (propName !== "FullVideo")) {
+                console.log(propName)
                 result = await uploadImage(files[0], propName);
                 updatedItem = { ...data, ...updatedItem, [propName]: result.payload };
             }
+            else if ((propName === "Trailer") || (propName === "FullVideo")) {
+                updatedItem = { ...data, ...updatedItem, [propName]: form[propName] };
+            }
         }
-        
+
+        console.log(updatedItem)
+
         if (updatedItem !== undefined) {
             const updateResult = await updateDocument(path, updatedItem,  data.id);
             updateResult.status ? onSuccess(updatedItem) : onFailure(updateResult.message);
         }
     }
 
-    async function uploadImage(file,propName) {
+    async function uploadImage(file, propName) {
         let filePath
-        
-        if(updatemediatype === 'Category'){filePath = `${path}/${data.id}_${data.Title}/${propName}_${file.name}`;}
-        if(updatemediatype === 'Episode'){filePath = `TVShows/${seasonData[0].id}_${seasonData[0].Title}/${data.SeasonNumber}_${data.EpisodeNumber}_${file.name}`;}
+
+        if (updatemediatype === 'Category') { filePath = `${path}/${data.id}_${data.Title}/${propName}_${file.name}`; }
+        if (updatemediatype === 'Episode') { filePath = `TVShows/${seasonData[0].id}_${seasonData[0].Title}/${data.SeasonNumber}_${data.EpisodeNumber}_${file.name}`; }
         const imageFromFile = await readFile(file);
         const resizedImage = await resizeImage(imageFromFile, 240, 180);
         const result = await uploadFile(resizedImage, filePath);
@@ -57,8 +64,8 @@ export default function UpdateMedia({ path, data, updatemediatype }) {
     }
 
     function onSuccess(updatedItem) {
-        if(updatemediatype === 'Category'){dispatch({ type: 'UPDATE_ITEM', payload: updatedItem });}
-        if(updatemediatype === 'Episode'){episodeDispatch({ type: 'UPDATE_ITEM', payload: updatedItem });}
+        if (updatemediatype === 'Category') { dispatch({ type: 'UPDATE_ITEM', payload: updatedItem }); }
+        if (updatemediatype === 'Episode') { episodeDispatch({ type: 'UPDATE_ITEM', payload: updatedItem }); }
         document.getElementById("upload-media-btn").disabled = false;
         setModal(null);
     }
