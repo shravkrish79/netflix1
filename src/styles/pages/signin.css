@@ -32,7 +32,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 70vh;
+    min-height: 70vh;
     width: 25vw;
     background-color: rgba(0, 0, 0, 0.75);
     z-index: 1;
@@ -45,23 +45,23 @@
 .box-content h1 {
     font-weight: 600;
     font-size: 45px;
-    margin-bottom: 45px;
+    margin-bottom: 5%;
 }
 
 #signin label {
     width: 100%;
-    height: 100px;
+    height: 80px;
 
 }
 
 #signin input {
     background-color: var(--selected-black);
     color: var(--color-white);
-    height: 60px;
+    height: 50px;
 }
 
 .eye-btn {
-    margin-top: -50px;
+    margin-top: -40px;
     margin-left: 90%;
     height: 30px;
     width: 30px;
@@ -74,9 +74,9 @@
 }
 
 .login-btn {
-    margin-top: 30px;
-    padding: 3%;
-    font-size: 32px;
+    margin-top: 10%;
+    padding: 4% 3%;
+    font-size: 16px;
     width: 100%;
     background-color: var(--netflix-red);
     color: var(--color-white);
@@ -84,15 +84,15 @@
 }
 
 .box-link {
-    margin-top: 100px;
-    font-size: 22px;
+    margin-top: 10%;
+    font-size: 90%;
     font-weight: 400;
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.5)
 }
 
 .box-link p {
-    font-size: 18px;
+    font-size: 75%;
     padding-top: 10px;
 }
 
@@ -111,7 +111,7 @@
 }
 
 #signin .login-help input {
-    height: 15px;
+    height: 50%;
     width: 15px;
     margin-right: 5px;
 }
@@ -121,7 +121,7 @@
     height: 25px;
     width: fit-content;
     margin: 0;
-    font-size: 18px;
+    font-size: 95%;
     line-height: 1;
 }
 

@@ -1,0 +1,58 @@
+.modal-content {
+    position: relative;
+    min-height: 50vh;
+    z-index: -1;
+    
+}
+
+
+#displaymodal img {
+    position: absolute;
+    top: 0;
+    height: 50vh;
+    width: 100%;
+    z-index: -2;
+}
+
+#displaymodal .BannerContent {
+    top: 35vh;
+}
+
+#displaymodal .BannerContent span {
+    font-size: 200%;
+    font-weight: 800;
+    color: var(--netflix-red);
+}
+
+.display-bottom {
+    text-align: justify;
+    padding-left: 50px;
+    background-image: linear-gradient(to top, rgba(3, 3, 3, 1), rgba(3, 3, 3, 0.2));
+    padding-bottom: 5%;
+}
+
+.display-bottom h1{
+    padding-top: 50vh;
+}
+
+.bottom-content{
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    flex: 1 1 50%;
+    gap:25px;
+    margin:auto;
+    flex-wrap: wrap;
+}
+
+
+.bottom-content h3{
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    gap:5px;
+}
+.bottom-content h4{
+    text-align: justify;
+    width: 45%;
+}

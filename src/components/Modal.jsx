@@ -1,9 +1,8 @@
 import ReactDOM from "react-dom";
 // import { useLocation } from "react-router-dom";
 
-export default function Modal({ modalState, id }) {
+export default function Modal({ modalState }) {
     const [modal, setModal] = modalState;
-    // const location = useLocation();
 
     // Safeguard
     //Test case 1: Not to open when you pass null on modal

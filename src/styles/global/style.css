@@ -9,6 +9,8 @@
 
 @import "../pages/displaypage.css";
 @import "../components/displaycard.css";
+@import "../components/displaymodal.css";
+
 @import "../pages/contentmanager.css";
 @import "../pages/category.css";
 @import "../pages/season.css";
