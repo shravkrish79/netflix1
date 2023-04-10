@@ -2,10 +2,14 @@
     position: fixed;
     height: 100px;  
     width: 100%;
-    margin: auto 60px;
+    /* margin: auto 60px; */
+    padding-left: 60px;
     display: flex;
     align-items: center;
     z-index: 1500;
+}
+.nav-colored{
+    background-color: var(--color-black);
 }
 #navbar a{
     text-decoration: none;

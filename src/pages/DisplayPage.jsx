@@ -35,7 +35,6 @@ export default function DisplayPage() {
         setStatus(2);
         console.error();
     }
-    console.log(status)
 
     if (status === 1) { console.log(displayData); }
     if (status === 0) { return <h1>Loading...</h1> }

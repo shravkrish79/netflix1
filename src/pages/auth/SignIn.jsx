@@ -18,8 +18,6 @@ export default function SignIn() {
     async function onSubmit(event) {
         event.preventDefault();
         document.getElementById("login-btn").disabled = true;
-          
-        console.log(form);
         const result = await login(form.Email, form.Password);
         result.status ? onSuccess(result) : onFailure(result);
     }
