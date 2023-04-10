@@ -21,7 +21,7 @@ export default function DisplayCard({ Category }) {
 
     const List = [...new Set((data.map(arr => arr.trim())).filter(itm => itm !== ''))];
     const dataList = List.map((recs, idx) =>
-        <li key={'displaycardlist-'+idx}>{recs}
+        <li key={'displaycardlist-'+idx}> <h3>{recs}</h3>
             <div className="content-cards" key={"contentcards-"+idx}>
                 {contentData.map((itm) => itm.dataList.filter(idx => idx.Genres.includes(recs) || idx.OriginalLanguage.includes(recs) || idx.DubbedLanguage.includes(recs))
                     .map((itm1, idx) =>
