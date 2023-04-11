@@ -28,7 +28,7 @@ export default function DisplayModal({ data,mediacategory }) {
                         <h4>Rating: {data.Rating}</h4>
                     </h3>
                     <h3>Cast: {data.Casting}</h3>
-                    <h3>{data.ShortDesc}</h3>
+                    <h3>{data.LongDesc}</h3>
                     <h3>Genres:{data.Genres}</h3>
                 </div>
             </div>

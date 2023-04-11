@@ -1,15 +1,15 @@
-#displaypage{
+#displaypage {
     min-height: 100vh;
     position: relative;
 }
 
-#banner{
+#banner {
     position: relative;
-    min-height: 80vh;
+    min-height: 85vh;
     width: 100%;
 }
 
-#banner img{
+#banner img {
     position: absolute;
     z-index: -2;
     height: 100vh;
@@ -20,31 +20,33 @@
     position: absolute;
     text-align: justify;
     width: 50%;
-    bottom: 10vh;
+    bottom: 5vh;
     z-index: 1;
     display: flex;
     flex-direction: column;
-    gap:30px;
+    gap: 30px;
     left: 50px;
 }
 
-.BannerContent span{
+.BannerContent span {
     font-size: 300%;
     font-weight: 800;
     color: var(--netflix-red);
 }
 
-.BannerContent p{
+.BannerContent p {
     font-size: 150%;
     font-weight: 400;
 }
 
-.Banner-btn{
+.Banner-btn {
     display: flex;
     gap: 50px;
 }
-.play-btn, .info-btn{
-    min-width:20%;
+
+.play-btn,
+.info-btn {
+    min-width: 20%;
     display: inline;
     padding: 2% 3%;
     font-size: 100%;
@@ -58,13 +60,80 @@
     border-radius: 10px;
 }
 
-.play-btn:hover, .info-btn:hover{
+.play-btn:hover,
+.info-btn:hover {
     opacity: 0.75;
 }
 
-.info-btn{
+.info-btn {
     background-color: var(--color-gray);
     color: var(--color-white);
     border: none;
     font-weight: 600;
+}
+
+@media screen and (max-width:1023px) {
+    #banner {
+        min-height: 25vh;
+        max-height: 30vh;
+        width: 100%;
+    }
+
+    #banner img {
+        height: 30vh;
+    }
+
+    .BannerContent {
+        gap: 10px;
+        width: 70%;
+        top: 13vh;
+        left: 15px;
+    }
+
+    .BannerContent span {
+        font-size: 130%;
+    }
+
+    .BannerContent p {
+        display: none;
+    }
+
+    .Banner-btn {
+        gap: 10px;
+    }
+
+    .play-btn,
+    .info-btn {
+        width: fit-content;
+        font-size: 60%;
+        border-radius: 5px;
+    }
+}
+
+
+@media screen and (min-width:700px) and (max-width:1023px) {
+    .BannerContent {
+        top: 13vh;
+    }
+    .BannerContent span {
+        font-size: 170%;
+    }
+    .BannerContent p {
+        display: inline-block;
+        font-size: 80%;
+    }
+
+}
+
+@media screen and (min-width:1024px) and (max-height:800px) {
+    .BannerContent {
+        bottom:5vh;
+    }
+    .BannerContent span {
+        font-size: 200%;
+    }
+    .BannerContent p {
+        display: inline-block;
+        font-size: 100%;
+    }
 }

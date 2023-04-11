@@ -15,7 +15,7 @@ export default function RandomBanner() {
             <img src={data.BannerImage} alt={data.Title} />
             <div className="BannerContent">
                 <span >{data.Title}</span>
-                <p >{data.LongDesc}</p>
+                <p >{data.ShortDesc}</p>
                 <div className="Banner-btn">
                     <button className="play-btn" onClick={() => Navigate(`/${displayData[0].id}/${data.Title}`,{ state: { data:data } } ) }><FaPlay  /><h3>Play</h3></button>
                     <button className="info-btn" onClick={()=>setModal(<DisplayModal data={data}/>)}><FaInfoCircle /><h3>More Info</h3></button>
