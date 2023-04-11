@@ -33,21 +33,21 @@ export default function UpdateMedia({ path, data, updatemediatype }) {
         for (var propName in form) {
             let result;
             const files = form[propName];
-            
+
             if ((files) && (propName !== "Trailer") && (propName !== "FullVideo")) {
                 console.log(propName)
                 result = await uploadImage(files[0], propName);
                 updatedItem = { ...data, ...updatedItem, [propName]: result.payload };
             }
             else if ((propName === "Trailer") || (propName === "FullVideo")) {
-                updatedItem = { ...data, ...updatedItem, [propName]: form[propName] };
+                if (form[propName]) {
+                    updatedItem = { ...data, ...updatedItem, [propName]: form[propName] };
+                }
             }
         }
 
-        console.log(updatedItem)
-
         if (updatedItem !== undefined) {
-            const updateResult = await updateDocument(path, updatedItem,  data.id);
+            const updateResult = await updateDocument(path, updatedItem, data.id);
             updateResult.status ? onSuccess(updatedItem) : onFailure(updateResult.message);
         }
     }
@@ -58,7 +58,7 @@ export default function UpdateMedia({ path, data, updatemediatype }) {
         if (updatemediatype === 'Category') { filePath = `${path}/${data.id}_${data.Title}/${propName}_${file.name}`; }
         if (updatemediatype === 'Episode') { filePath = `TVShows/${seasonData[0].id}_${seasonData[0].Title}/${data.SeasonNumber}_${data.EpisodeNumber}_${file.name}`; }
         const imageFromFile = await readFile(file);
-        const resizedImage = await resizeImage(imageFromFile, 240, 180);
+        const resizedImage = await resizeImage(imageFromFile, 1920, 2880);
         const result = await uploadFile(resizedImage, filePath);
         return result;
     }

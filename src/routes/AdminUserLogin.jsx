@@ -5,14 +5,10 @@ import Seasons from "../pages/Seasons";
 import ContentManager from "../pages/ContentManager";
 import Episode from "../pages/Epsisode";
 
-import Navbar from "../components/Navbar";
-
-
 
 export default function AdminUserLogin() {
     return (
         <div>
-        <Navbar />
         <Routes>
             <Route path="/" element={<ContentManager />} />
             <Route path="/:category" element={<Category />} />

@@ -1,6 +1,6 @@
 
 import "./styles/global/style.css";
-import "./scripts/scroll";
+
 
 import ScrollTop from "./scripts/ScrollTop";
 import { BrowserRouter } from "react-router-dom";

@@ -9,7 +9,7 @@ export default function PlayVideo() {
         <div id="playvideo">
             <iframe
                 key={videourl.id}
-                src={videourl.Trailer}
+                src={videourl.Trailer+'?autoplay=1'}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
