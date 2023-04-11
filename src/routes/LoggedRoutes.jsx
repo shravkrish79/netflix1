@@ -1,4 +1,4 @@
-import "../scripts/scroll";
+
 import AdminUserLogin from "./AdminUserLogin";
 import NormalUserLogin from "./NormalUserLogin";
 import Navbar from "../components/Navbar";

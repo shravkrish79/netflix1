@@ -48,34 +48,15 @@
     margin-bottom: 5%;
 }
 
-#signin label {
-    width: 100%;
-    height: 80px;
-}
-
 #signin input {
     background-color: var(--selected-black);
     color: var(--color-white);
-    height: 50px;
-}
-
-.eye-btn {
-    margin-top: -10%;
-    margin-left: 90%;
-    height: 30px;
-    width: 30px;
-    cursor: pointer;
-}
-
-.eye-btn svg {
-    height: 30px;
-    width: 30px;
 }
 
 .login-btn {
-    margin-top: 10%;
+    margin-top: 8%;
     padding: 4% 3%;
-    font-size: 16px;
+    font-size: 20px;
     width: 100%;
     background-color: var(--netflix-red);
     color: var(--color-white);
@@ -84,7 +65,7 @@
 
 .box-link {
     margin-top: 10%;
-    font-size: 90%;
+    font-size: 150%;
     font-weight: 400;
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.5)
@@ -141,24 +122,12 @@
 
     .box-content h1 {
         font-size: 32px;
-    }
-
-    #signin label {
-        height: 60px;
-    }
-
-    #signin input {
-        height: 30px;
-    }
-
-    .eye-btn {
-        margin-top: -12%;
-        height: 20px;
-        width: 20px;
+        padding-bottom: 10px;
     }
 
     .box-link {
         margin-top: 20%;
+        font-size: 100%;
     }
 
     #signin .login-help input {
@@ -171,12 +140,13 @@
     }
 }
 
+
 @media screen and (min-width:300px) and (max-width:699px) and (min-height:700px) {
 
     .box-container {
-        top: 30%;
+        top: 40%;
         left: 50%;
-        transform: translate(-50%, -30%);
+        transform: translate(-50%, -40%);
     }
 
     @media screen and (min-width:520px) {
@@ -214,13 +184,6 @@
             font-size: 90%;
         }
 
-        #signin label {
-            font-size: 150%;
-        }
-
-        .eye-btn {
-            margin-top: -8%;
-        }
     }
 }
 
@@ -238,22 +201,16 @@
         font-size: 32px;
     }
 
-    #signin label {
-        height: 65px;
-    }
-
-    #signin input {
-        height: 30px;
-    }
-
     .box-content {
         margin: 15px 45px;
     }
-
-    .eye-btn {
-        margin-top: -9%;
-        height: 15px;
-        width: 15px;
+    .box-link {
+        font-size: 100%;
     }
 
-}
+    .box-link p {
+        font-size: 90%;
+    }
+
+
+} 

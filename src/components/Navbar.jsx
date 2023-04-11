@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../state/useUser";
-// import { useProfile } from "../state/useProfile";
+import "../scripts/scroll";
 import Logo from "../assets/images/netflix-logo.svg";
 import { GoSearch } from "react-icons/go";
 import { MdOutlineNotificationsNone } from "react-icons/md";
