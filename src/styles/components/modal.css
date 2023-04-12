@@ -58,6 +58,7 @@
 @media screen and (min-width:700px) and (max-width:1023px) {
     .modalview {
         min-width: 80vw;
+        margin: 20% auto;
     }
     @media screen and (min-height:1024px) {}
 }
@@ -65,6 +66,6 @@
 @media screen and (min-width:1024px) and (max-height:800px) {
     .modalview {
         min-width: 60vw;
-        margin: 25% auto;
+        margin: 15% auto;
     }
 }

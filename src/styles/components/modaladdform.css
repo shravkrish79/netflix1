@@ -2,6 +2,7 @@
     text-align: center;
     min-height: 20vh;
     min-width: 50vw;
+    transition: all 0.2s ease-in-out;
 }
 
 #AddForm>h1, .deletecategory>h1, .uploadmedia>h1, .updatecategory>h1 {
@@ -31,13 +32,14 @@
     padding: 1% 2%;
     margin:auto 25px;
     margin-top: 30px;
-    background-color: var(--color-white);
+    background-color: var(--netflix-red);
+    color: var(--color-white);
     font-size: 20px;
 }
 
 .addform-btn:hover{
-    background-color: var(--netflix-red);
-    color: var(--color-white);
+    color: var(--netflix-red);
+    background-color: var(--color-white);
 }
 
 #AddForm>span, .updatecategory>span{
@@ -56,7 +58,6 @@
     .addform-btn{
         padding: 1% 2%;
         margin-top: 30px;
-        background-color: var(--color-white);
         font-size: 18px;
     }
 }
@@ -67,9 +68,16 @@
 }
 
 @media screen and (min-width:700px) and (max-width:1023px) {
+    #Rating {
+        width: 100%;
+        font-size: 14px;
+    }
     @media screen and (min-height:1024px) {}
 }
 
-@media screen and (min-width:1024px) and (max-height:800px) {
-    
+@media screen and (min-width:1024px) and (max-height:800px) { 
+    #Rating {
+        width: 100%;
+        font-size: 14px;
+    }
 }
