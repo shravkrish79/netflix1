@@ -2,6 +2,7 @@
     width: 100%;
     min-height: 40vh;
     text-align: center;
+    margin-bottom: 50px;
 }
 
 #category a {
@@ -9,8 +10,8 @@
     color: var(--color-white);
 }
 
-.container {    
-    width: 60vw;
+.container {
+    width: 55vw;
     margin: 0 auto;
     padding-top: 15%;
 }
@@ -18,9 +19,9 @@
 .cards {
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: start;
     flex-wrap: wrap;
-    gap: 7vw;
+    gap: 1vw;
     margin-bottom: 7vw;
 }
 
@@ -32,9 +33,9 @@
 .card-data,
 .container a {
     position: relative;
-    height: 30vh;
-    width: 15vw;
-    border: 1px solid var(--netflix-red);
+    height: 20vh;
+    width: 10vw;
+    border: 2px solid var(--netflix-red);
 }
 
 .card-data img {
@@ -52,9 +53,13 @@
 .card-data span {
     position: absolute;
     display: block;
+    text-align: center;
     top: 50%;
-    width: 100%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 70%;
     z-index: 1;
+    font-size: 24px;
 }
 
 .reacticons {
@@ -66,12 +71,8 @@
 
 .container a:hover>.reacticons {
     color: var(--color-white);
-
 }
 
-.card-data:hover>span {
-    transform: scale(1.5);
-}
 
 .card-data:hover {
     transform: translateY(-3%);
@@ -117,4 +118,100 @@
 .back-btn {
     padding: 1% 2%;
     border: 1px solid var(--netflix-red);
+}
+
+
+
+@media screen and (max-width:699px) {
+    .container {
+        width: 100vw;
+        padding-top: 150px;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    .card-data,
+    .container a {
+        height: 20vh;
+        width: 50vw;
+        margin: auto;
+        border-width: 1px;
+        margin-bottom: 15px;
+    }
+
+    .card-data span {
+        font-size: 14px;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    .reacticons {
+        height: 50px;
+        width: 50px;
+        margin: 20% auto;
+        color: var(--netflix-red);
+    }
+}
+
+
+@media screen and (min-width:300px) and (max-width:699px) and (min-height:700px) {
+    @media screen and (min-width:520px) {}
+}
+
+@media screen and (min-width:700px) and (max-width:1023px) {
+    .container {
+        width: 50vw;
+        padding-top: 150px;
+    }
+
+
+    .card-data,
+    .container a {
+        height: 20vh;
+        width: 50vw;
+        margin: auto;
+        border-width: 1px;
+        margin-bottom: 15px;
+    }
+
+    .card-data span {
+        font-size: 14px;
+        left: 50%;
+        transform: translate(-50%);
+    }
+
+    .reacticons {
+        height: 50px;
+        width: 50px;
+        margin: 20% auto;
+        color: var(--netflix-red);
+    }
+}
+
+@media screen and (min-width:1024px) and (max-height:800px) {
+    .container {
+        width: 80vw;
+    }
+
+    .card-data,
+    .container a {
+        height: 20vh;
+        width: 15vw;
+        border-width: 1px;
+        font-size: 16px;
+    }
+
+    .card-data span {
+        font-size: 12px;
+        left: 50%;
+        transform: translate(-50%);
+    }
+    .reacticons {
+        height: 50px;
+        width: 50px;
+        margin: 20% auto;
+        color: var(--netflix-red);
+    }
 }

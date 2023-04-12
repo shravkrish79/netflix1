@@ -22,7 +22,7 @@
     color: var(--color-white);
     height: 30vh;
     width: 15vw;
-    border: 1px solid var(--netflix-red);
+    border: 2px solid var(--netflix-red);
     line-height: 30vh;
     font-size: 26px;
     cursor: pointer;
@@ -36,3 +36,54 @@
     transform: translateY(-5%);
 }
 
+
+@media screen and (max-width:1023px) {
+    #contentmanager h1 {
+        font-size: 24px;
+    }
+
+    .card-container {
+        width: 100vw;
+        flex-direction: column;
+    }
+
+    .card-container a {
+        height: 30vh;
+        width: 60vw;
+        font-size: 20px;
+        cursor: pointer;
+        margin-bottom: 35px;
+    }
+}
+
+
+@media screen and (min-width:300px) and (max-width:699px) and (min-height:700px) {
+    .card-container {
+        min-height: 25vh;
+    }
+
+    .card-container a {
+        height: 25vh;
+        line-height: 25vh;
+    }
+    @media screen and (min-width:520px) {
+        .card-container a {
+            height: 30vh;
+            width: 40vw;
+        }
+    }
+}
+
+@media screen and (min-width:700px) and (max-width:1023px) {
+    .card-container a {
+        height: 25vh;
+        width: 40vw;
+        line-height: 25vh;
+    }
+}
+
+@media screen and (min-width:1024px) and (max-height:800px) {
+    #contentmanager h1, .card-container a {
+        font-size: 18px;
+    }
+}

@@ -1,6 +1,7 @@
 #AddForm {
     text-align: center;
     min-height: 20vh;
+    min-width: 50vw;
 }
 
 #AddForm>h1, .deletecategory>h1, .uploadmedia>h1, .updatecategory>h1 {
@@ -10,9 +11,10 @@
 }
 
 .content-form {
-    width: 50vw;
+    width: 80%;
     margin: 35px auto;
 }
+
 
 #releaseddate span,
 #timelength span,
@@ -42,4 +44,32 @@
     display: block;
     font-size: 12px;
     padding-top: 20px;
+}
+
+
+@media screen and (max-width:699px) {
+    #Rating {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .addform-btn{
+        padding: 1% 2%;
+        margin-top: 30px;
+        background-color: var(--color-white);
+        font-size: 18px;
+    }
+}
+
+
+@media screen and (min-width:300px) and (max-width:699px) and (min-height:700px) {
+    @media screen and (min-width:520px) {}
+}
+
+@media screen and (min-width:700px) and (max-width:1023px) {
+    @media screen and (min-height:1024px) {}
+}
+
+@media screen and (min-width:1024px) and (max-height:800px) {
+    
 }
