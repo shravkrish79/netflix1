@@ -6,6 +6,8 @@
 }
 
 #AddForm>h1, .deletecategory>h1, .uploadmedia>h1, .updatecategory>h1 {
+    padding: 1% 2%;
+    font-size: 20px;
     background-color: var(--netflix-red);
     line-height: 1.5;
     font-weight: 500;
@@ -60,6 +62,7 @@
         margin-top: 30px;
         font-size: 18px;
     }
+ 
 }
 
 

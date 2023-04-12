@@ -5,13 +5,13 @@ import UpdateCategory from "./UpdateCategory";
 import {Link} from "react-router-dom";
 import UpdateMedia from "./UpdateMedia";
 import { useSeason } from "../state/useSeason";
+import DisplayModal from "./display/DisplayModal";
 
 export default function CategoryCard({ path, categoryData }) {
 
     const { id, BannerImage, Title } = categoryData;
     const showname = Title.replace(/ /g,"");
     
-    // console.log(categoryData);
     // Global state
     const { setModal } = useCategory();
     const { saveCID,categoryDispatch } = useSeason();
@@ -36,7 +36,7 @@ export default function CategoryCard({ path, categoryData }) {
                 <button onClick={() => setModal(UpdateItem)}>📝</button>
                 <button onClick={() => setModal(DeleteItem)}>❌</button>
             </div>
-            {(path !=='TVShows') && <Link className="card-link"/>}
+            {(path !=='TVShows') && <Link className="card-link" onClick={()=> setModal(<DisplayModal data={categoryData} mediacategory={path.toLowerCase()}/>)} />}
             {(path ==='TVShows') && <Link className="card-link" onClick={()=>setCategoryID(id)} to={`/tvshows/${showname}`} />}
         </div >
 

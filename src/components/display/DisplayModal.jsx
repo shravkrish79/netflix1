@@ -4,6 +4,7 @@ import { useCategory } from "../../state/useCategory";
 
 export default function DisplayModal({ data,mediacategory }) {
     console.log(data);
+    console.log(mediacategory)
     const {setModal}=useCategory();
     const Navigate = useNavigate();
     function playvideos(){

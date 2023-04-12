@@ -47,25 +47,36 @@
         min-width: 80vw;
         margin: 50% auto;
     }
+    .modalview-btn {
+        float: right;
+        height: 30px;
+        width: 30px;
+    }
 
 }
 
 
-@media screen and (min-width:300px) and (max-width:699px) and (min-height:700px) {
-    @media screen and (min-width:520px) {}
-}
 
 @media screen and (min-width:700px) and (max-width:1023px) {
     .modalview {
         min-width: 80vw;
         margin: 20% auto;
     }
-    @media screen and (min-height:1024px) {}
+    .modalview-btn {
+        float: right;
+        height: 40px;
+        width: 40px;
+    }
 }
 
 @media screen and (min-width:1024px) and (max-height:800px) {
     .modalview {
         min-width: 60vw;
         margin: 15% auto;
+    }
+    .modalview-btn {
+        float: right;
+        height: 40px;
+        width: 40px;
     }
 }

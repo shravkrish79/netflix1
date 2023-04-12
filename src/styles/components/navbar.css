@@ -1,6 +1,6 @@
-#navbar{
+#navbar {
     position: fixed;
-    height: 100px;  
+    height: 100px;
     width: 100%;
     /* margin: auto 60px; */
     padding-left: 60px;
@@ -8,10 +8,12 @@
     align-items: center;
     z-index: 1500;
 }
-.nav-colored{
+
+.nav-colored {
     background-color: var(--color-black);
 }
-#navbar a{
+
+#navbar a {
     text-decoration: none;
     color: var(--color-white);
     text-align: center;
@@ -20,37 +22,49 @@
     font-weight: 400;
 }
 
-#navbar img{
+#navbar img {
     height: 45px;
     width: 95px;
     margin-right: 60px;
     cursor: pointer;
 }
 
-#navbar ul li{
+#navbar ul li {
     list-style: none;
     display: inline;
 }
 
-#navbar .menu{
+#navbar .menu {
     width: 65%;
 }
 
-#navbar ul li a{
+#navbar ul li a {
     margin: 2%;
 }
 
-#navbar ul li a:hover{
+#navbar ul li a:hover {
     opacity: 0.7;
     transition: all 0.3s ease-in-out;
 }
 
-#navbar label{
+#navbar ul ul {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+.profileicon img{
+    display: block;
+    margin: auto;
+    line-height: 100px;
+}
+
+#navbar label {
     height: 50px;
     min-width: 50px;
 }
 
-.searchbox{
+.searchbox {
     position: relative;
     display: flex;
     align-items: center;
@@ -59,36 +73,35 @@
     margin: auto 0.5%;
 }
 
-.searchbox input{
+.searchbox input {
     width: 80%;
 }
 
-.search-btn{
+.search-btn {
     width: 20%;
 }
 
-#searchicon{
+#searchicon {
     height: 30px;
     width: 25px;
     margin-left: 5px;
     cursor: pointer;
 }
 
-.hidesearch{
+.hidesearch {
     opacity: 0;
     transition: all 0.3s ease-in-out;
 }
 
-.showsearch{
+.showsearch {
     opacity: 1;
     transition: all 0.3s ease-in-out;
 }
 
-#navbar .reacticons{
+#navbar .reacticons {
     height: 30px;
     width: 30px;
     color: var(--color-white);
     margin: 0 1%;
     cursor: pointer;
 }
-

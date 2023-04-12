@@ -48,7 +48,15 @@ export default function Navbar() {
                 <div className="search-btn" onClick={() => showsearchbox()}><GoSearch id="searchicon" /></div>
             </div>
             <MdOutlineNotificationsNone className="reacticons" />
-            <img src={userIcon} alt={"yellow default icon"} className="reacticons" />
+            <div className="profileicon">
+                <ul>
+                    <li><img src={userIcon} alt={"yellow default icon"} className="reacticons" />
+                        <ul>
+                            <li><a href={"."} onClick={() => { }}> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
     )
 }
