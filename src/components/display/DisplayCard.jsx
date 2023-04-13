@@ -28,7 +28,7 @@ export default function DisplayCard({ Category }) {
                 {contentData.map((itm) => itm.dataList.filter(idx => idx.Genres.includes(recs) || idx.OriginalLanguage.includes(recs) || idx.DubbedLanguage.includes(recs))
                     .map((itm1, idx) =>
                         <div className="datacard" key={"datacard-" + idx}>
-                            <img src={itm1.ThumbnailImage || itm1.BannerImage} alt={itm1.Title} />
+                            <img src={itm1.ThumbnailImage || itm1.BannerImage} alt={itm1.Title}  onClick={()=>Navigate(`/${itm.id}/${itm1.Title}`,{ state: { data:itm1 } } )}/>
                             <div className="card-buttons" >
                                 <ImPlay2 id={"playicon-" + idx} className="play-btn" onClick={() => Navigate(`/${itm.id}/${itm1.Title}`,{ state: { data:itm1 } } ) }/>
                                 <ImInfo id={"infoicon-" + idx} className="play-btn" onClick={() => setModal(<DisplayModal data={itm1} mediacategory={itm.id}/>)} />
