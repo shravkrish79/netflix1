@@ -2,17 +2,19 @@ import { useCategory } from "../../state/useCategory";
 import { FaPlay, FaInfoCircle } from "react-icons/fa";
 import DisplayModal from "./DisplayModal";
 import { useNavigate } from "react-router-dom";
+import Placeholder from "../../assets/images/placeholder.jpg";
 
 export default function RandomBanner() {
     const { displayData } = useCategory();
     const data = displayData[0].dataList[0];
     const {setModal} = useCategory();
     const Navigate = useNavigate();
-// console.log(data);
+// console.log(displayData);
+    const ImageSource = (data.BannerImage === null) ? Placeholder : data.BannerImage;
 
     return (
         <div className="Banner" id="banner">
-            <img src={data.BannerImage} alt={data.Title} />
+            <img src={ImageSource} alt={data.Title} />
             <div className="BannerContent">
                 <span >{data.Title}</span>
                 <p >{data.ShortDesc}</p>

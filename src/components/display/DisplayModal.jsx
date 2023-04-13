@@ -1,6 +1,7 @@
 import { FaPlay } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useCategory } from "../../state/useCategory";
+import Placeholder from "../../assets/images/placeholder.jpg";
 
 export default function DisplayModal({ data,mediacategory }) {
     console.log(data);
@@ -13,7 +14,7 @@ export default function DisplayModal({ data,mediacategory }) {
     }
     return (
         <div id="displaymodal">
-            <img src={data.BannerImage} alt={data.Title} />
+            <img src={data.BannerImage||Placeholder} alt={data.Title} />
             <div className="BannerContent">
                 <span >{data.Title}</span>
                 <div className="Banner-btn">
