@@ -1,0 +1,136 @@
+#navbar-mobile {
+    position: fixed;
+    width: 100%;
+    z-index: 2000;
+}
+
+.nav-items .logo {
+    width: 25vw;
+}
+
+.nav-items .logo img {
+    height: 5vh;
+    width: 20vw;
+    /* margin: auto 50px; */
+}
+
+.bar-icon {
+    height: 40px;
+    width: 40px;
+    margin: auto;
+    cursor: pointer;
+}
+
+.nav-items {
+    position: relative;
+    height: 80px;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 5vw;
+    margin-right: 20%;
+}
+
+
+.nav-items a {
+    color: var(--color-white);
+    text-decoration: none;
+    margin: 0;
+}
+
+.nav-items ul {
+    float: left;
+    list-style: none;
+    position: relative;
+}
+
+.nav-items ul li {
+    display: inline-block;
+    width: 100%;
+    margin: 0 5px;
+}
+
+.nav-items ul li:hover>ul {
+    top: 61px;
+    right: 0;
+    width: 75vw;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0s ease-in;
+}
+
+.nav-items ul li a {
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 40px;
+}
+
+.nav-items ul li a:hover {
+    opacity: 0.75;
+    transition: all 0s ease;
+}
+
+.nav-items ul ul {
+    position: absolute;
+    top: 60px;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.75);
+    left: 0;
+    opacity: 0.5;
+    visibility: hidden;
+    /* transition: all 0s ease-in-out; */
+}
+
+.nav-items ul ul li {
+    position: relative;
+    margin: 0;
+    margin-bottom: 20px;
+    width: 0;
+    color: var(--color-white);
+    float: none;
+    display: list-item;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-out;
+}
+
+.nav-items ul ul li a {
+    margin: 15px;
+}
+
+
+.mobilesearchbox {
+    display: inline-block;
+    width: 30vw;
+    position: relative;
+}
+
+#mobilesearch {
+    width: 40vw;
+    margin: 0;
+}
+
+
+#mobilesearchicon {
+    display: none;
+}
+
+@media screen and (min-width:1024px) {
+    #navbar-mobile {
+        display: none;
+    }
+
+}
+
+@media screen and (min-width:700px) and (max-width:1023px) {
+    .nav-items ul li a{
+        font-size: 24px;
+    }
+
+    .nav-items ul ul li {
+        margin-bottom: 30px;
+    }
+}

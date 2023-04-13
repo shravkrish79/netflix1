@@ -27,11 +27,11 @@ nav a {
     font-size: 28px;
 }
 
-.logo {
+#navbar .logo {
     width: 10vw;
 }
 
-.logo img {
+#navbar .logo img {
     height: 3vh;
     width: 5vw;
     margin: auto 50px;
@@ -175,8 +175,9 @@ nav ul ul li {
 @media screen and (min-width:1024px) and (max-height:800px) {
 
     nav a,
+    .nav-links a,
     nav ul li a {
-        font-size: 20px;
+        font-size: 16px;
     }
 
     nav ul ul li {
@@ -188,7 +189,7 @@ nav ul ul li {
     }
 
     .nav-links {
-        width: 50vw;
+        width: 55vw;
     }
 
     .searchbox {
@@ -204,9 +205,10 @@ nav ul ul li {
     }
 }
 
-@media screen and (max-width:1024px) {
-    nav {
+@media screen and (max-width:1023px) {
+    #navbar {
         display: none;
     }
 
 }
+
