@@ -1,0 +1,12 @@
+[
+    {
+        "key": "SeasonModal",
+        "id": "seasonmodal",
+        "type": "select",
+        "initialValue": "None",
+        "options": [],
+        "placeholder": "",
+        "required": false,
+        "autoFocus": true
+        }
+]
