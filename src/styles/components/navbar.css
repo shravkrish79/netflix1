@@ -1,107 +1,212 @@
 #navbar {
     position: fixed;
-    height: 100px;
     width: 100%;
-    /* margin: auto 60px; */
-    padding-left: 60px;
-    display: flex;
-    align-items: center;
-    z-index: 1500;
+    z-index: 2000;
 }
 
 .nav-colored {
-    background-color: var(--color-black);
+    background-color:  rgba(0, 0, 0, 0.75);;
 }
 
-#navbar a {
+nav {
+    position: relative;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
+    gap: 1vw;
+}
+
+
+
+nav a {
     text-decoration: none;
     color: var(--color-white);
-    text-align: center;
-    cursor: pointer;
-    font-size: 26px;
-    font-weight: 400;
+    margin: auto 1vw;
+    font-size: 28px;
 }
 
-#navbar img {
-    height: 45px;
-    width: 95px;
-    margin-right: 60px;
-    cursor: pointer;
+.logo {
+    width: 10vw;
 }
 
-#navbar ul li {
-    list-style: none;
-    display: inline;
+.logo img {
+    height: 3vh;
+    width: 5vw;
+    margin: auto 50px;
 }
 
-#navbar .menu {
-    width: 65%;
+.nav-links {
+    width: 60vw;
 }
 
-#navbar ul li a {
-    margin: 2%;
-}
-
-#navbar ul li a:hover {
-    opacity: 0.7;
-    transition: all 0.3s ease-in-out;
-}
-
-#navbar ul ul {
-    opacity: 0;
-    visibility: hidden;
-}
-
-
-.profileicon img{
-    display: block;
-    margin: auto;
-    line-height: 100px;
-}
-
-#navbar label {
-    height: 50px;
-    min-width: 50px;
+.nav-links a {
+    font-size: 24px;
 }
 
 .searchbox {
     position: relative;
     display: flex;
     align-items: center;
-    width: 16%;
+    width: 15vw;
     height: 30px;
     margin: auto 0.5%;
 }
 
 .searchbox input {
     width: 80%;
+    height: 40px;
+    border: none;
+    border-bottom: 1px solid var(--color-white);
+    padding: 5px 10px;
+    outline: none;
+    color: #fff;
+    background: transparent;
+    font-size: 18px;
+}
+
+.searchbox [placeholder]:focus::-webkit-input-placeholder {
+    /* transition: text-indent 0.4s 0.4s ease;
+    text-indent: -100%; */
+    color: #fff;
+    opacity: 1;
 }
 
 .search-btn {
+    position: absolute;
+    width: 10%;
+    right: 0;
+    transition: all 0.5s ease-out;
+}
+
+.move-search-btn {
+    position: absolute;
+    margin-left: 10%;
+    border-bottom: 1px solid var(--color-white);
     width: 20%;
+    transition: all 0.5s ease-out;
 }
 
 #searchicon {
-    height: 30px;
+    height: 40px;
     width: 25px;
-    margin-left: 5px;
     cursor: pointer;
+    transition: right 0.5s ease-out;
 }
 
 .hidesearch {
     opacity: 0;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.5s ease-out;
 }
 
 .showsearch {
+    position: absolute;
+    right: 0;
     opacity: 1;
+    transition: all 0.5s ease-in-out;
+}
+
+.profile-icon,
+.bell-icon {
+    height: 40px;
+    width: 40px;
+    margin: auto;
+    cursor: pointer;
+}
+
+
+nav::after {
+    content: '';
+    clear: both;
+    display: table;
+}
+
+nav ul {
+    float: right;
+    list-style: none;
+    position: relative;
+}
+
+nav ul li {
+    display: inline-block;
+    width: 100%;
+    margin: 0 5px;
+}
+
+nav ul li:hover>ul {
+    top: 150px;
+    opacity: 1;
+    visibility: visible;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 80px;
+}
+
+nav ul li a:hover,
+nav a:hover {
+    opacity: 0.75;
+}
+
+nav ul ul {
+    position: absolute;
+    top: 150px;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
     transition: all 0.3s ease-in-out;
 }
 
-#navbar .reacticons {
-    height: 30px;
-    width: 30px;
-    color: var(--color-white);
-    margin: 0 1%;
-    cursor: pointer;
+nav ul ul li {
+    position: relative;
+    margin: 0;
+    width: 200px;
+    background:  rgba(0, 0, 0, 0.5);
+    color: #fff;
+    float: none;
+    display: list-item;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+
+@media screen and (min-width:1024px) and (max-height:800px) {
+
+    nav a,
+    nav ul li a {
+        font-size: 20px;
+    }
+
+    nav ul ul li {
+        width: 150px;
+    }
+
+    nav ul li:hover>ul {
+        top: 140px;
+    }
+
+    .nav-links {
+        width: 50vw;
+    }
+
+    .searchbox {
+        width: 20vw;
+    }
+
+    .profile-icon,
+    .bell-icon {
+        height: 25px;
+        width: 25px;
+        margin: auto;
+        cursor: pointer;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    nav {
+        display: none;
+    }
+
 }

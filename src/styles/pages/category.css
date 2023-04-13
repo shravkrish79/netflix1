@@ -19,7 +19,7 @@
 .cards {
     width: 100%;
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     flex-wrap: wrap;
     gap: 1vw;
     margin-bottom: 7vw;
