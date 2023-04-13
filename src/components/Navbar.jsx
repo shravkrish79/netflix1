@@ -30,10 +30,10 @@ export default function Navbar() {
         <div id="navbar">
             <nav>
                 <div className="logo">
-                    <img src={Logo} alt="netflix red colour text" />
+                    <a href="/"><img src={Logo} alt="netflix red colour text" /></a>
                 </div>
                 <div className="nav-links">
-                    <a href=".">Home</a>
+                    <a href="/">Home</a>
                     <a href="/movies">Movies</a>
                     <a href="/tvshows">TVShows</a>
                     <a href="/documentaries">Documentary</a>
@@ -42,10 +42,10 @@ export default function Navbar() {
                     <input type="search" id="searchinput" placeholder="Titles, Genres" className={toggle ? "showsearch" : "hidesearch"} />
                     <div className={toggle ? "move-search-btn" : "search-btn"} onClick={() => showsearchbox()}><GoSearch id="searchicon" /></div>
                 </div>
-                <a href="."><MdOutlineNotificationsNone className="bell-icon" /></a>
+                <a href="javascript:void(0);"><MdOutlineNotificationsNone className="bell-icon" /></a>
                 <ul>
                     <li>
-                        <a href="."> <img src={userIcon} alt="default yellow" className="profile-icon" /> </a>
+                        <a href="javascript:void(0);"> <img src={userIcon} alt="default yellow" className="profile-icon" /> </a>
                         <ul>
                             <li><a href=".">Manage Profile</a></li>
                             <li><a href="/" onClick={() => onLogout()}>Logout</a></li>
