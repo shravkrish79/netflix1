@@ -49,6 +49,5 @@ function setItem(action) {
 function appendItem(state, action) {
     const newObj = action.payload;
     const newState = [...state, newObj];
-    
     return newState;
 }

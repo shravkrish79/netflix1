@@ -31,7 +31,7 @@ export default function SeasonModal({ data, season, mediacategory }) {
     console.log(episodeData);
     const EpisodeCards = (status === 1) && episodeData.length > 0 &&
         episodeData.map((recs) => <EpisodeList key={recs.id} data={recs} mediacategory={mediacategory}
-           season={season} Title={data.Title} />)
+           Title={data.Title} />)
 
     return (
         <div>

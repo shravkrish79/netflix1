@@ -36,7 +36,7 @@ export default function Episode() {
         setStatus(2);
     }
     // console.log(episodeData);
-    const EpisodeList = (status === 1) && (episodeData.map((recs) => <EpisodeCard key={recs.id} data={recs} path={collection} />))
+    const EpisodeList = (status === 1) && (episodeData.map((recs) => <EpisodeCard key={recs.id} data={recs} path={collection} showname={showname}/>))
     return (
         <div>
             {(status === 0) && <h1> Loading... </h1>}
