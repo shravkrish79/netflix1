@@ -8,6 +8,7 @@ export default function NormalUserLogin() {
                 <Route path="/" element={<DisplayPage />} />
                 <Route path="/:category" element={<DisplayPage />} />
                 <Route path="/:category/:title" element={<PlayVideo />} />
+                <Route path="/:category/:title/:season/:episode" element={<PlayVideo />} />
             </Routes>
 
     )

@@ -34,12 +34,12 @@ export default function UpdateMedia({ path, data, updatemediatype }) {
             let result;
             const files = form[propName];
 
-            if ((files) && (propName !== "Trailer") && (propName !== "FullVideo")) {
+            if ((files) && (propName !== "Trailer") && (propName !== "FullVideo") && (propName !== "EpisodeVideo")) {
                 console.log(propName)
                 result = await uploadImage(files[0], propName);
                 updatedItem = { ...data, ...updatedItem, [propName]: result.payload };
             }
-            else if ((propName === "Trailer") || (propName === "FullVideo")) {
+            else if ((propName === "Trailer") || (propName === "FullVideo") || (propName === "EpisodeVideo") ) {
                 if (form[propName]) {
                     updatedItem = { ...data, ...updatedItem, [propName]: form[propName] };
                 }

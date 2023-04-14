@@ -45,6 +45,7 @@
 .datacard {
     height: 16vh;
     min-width: 18vw;
+    width: 18vw;
     position: relative;
     overflow: hidden;
     border: 1px solid var(--color-white);

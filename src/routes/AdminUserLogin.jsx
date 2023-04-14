@@ -16,6 +16,7 @@ export default function AdminUserLogin() {
             <Route path="/tvshows/:showname" element={<Seasons />} />
             <Route path="/tvshows/:showname/:season" element={<Episode />} />
             <Route path="/:category/:title" element={<PlayVideo />} />
+            <Route path="/:category/:title/:season/:episode" element={<PlayVideo />} />
         </Routes>
         </div>
     );

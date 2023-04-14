@@ -3,17 +3,22 @@ import { useNavigate } from "react-router-dom";
 import { useCategory } from "../../state/useCategory";
 import Placeholder from "../../assets/images/placeholder.jpg";
 import SeasonModal from "../SeasonModal";
-import { useState, useRef } from "react";
+import { useState } from "react";
+// import { useState, useRef } from "react";
 
 
 export default function DisplayModal({ data, mediacategory }) {
     // console.log(data);
     // console.log(mediacategory)
 
-    const selectRef = useRef();
-    const Options = data.Seasons.map(itm => <option value={itm}>{itm}</option>)
+    let Options;
+    const [selectedValue, setSelectedValue] = useState(data.Seasons ? data.Seasons[0] : null);
 
+    if (mediacategory === 'tvshows') {
+        Options = data.Seasons.map(itm => <option value={itm}>{itm}</option>)
+    }
 
+    const episodes = <SeasonModal data={data} season={selectedValue} mediacategory={mediacategory}/>
     const { setModal } = useCategory();
     const Navigate = useNavigate();
     const defaultYear = new Date().getFullYear().toString();
@@ -22,15 +27,19 @@ export default function DisplayModal({ data, mediacategory }) {
         Navigate(`/${mediacategory}/${data.Title}`, { state: { data: data } })
     }
 
-    let seasondetail = <SeasonModal data={data} season={'Season1'} />
-
     return (
         <div id="displaymodal">
             <img src={data.BannerImage || Placeholder} alt={data.Title} />
             <div className="BannerContent">
                 <span >{data.Title}</span>
                 <div className="Banner-btn">
-                    <button className="play-btn" onClick={() => playvideos()}><FaPlay /><h3>Play</h3></button>
+                    {mediacategory !== 'tvshows' && <button className="play-btn" onClick={() => playvideos()}><FaPlay /><h3>Play</h3></button>}
+                    {mediacategory === 'tvshows' && <div >
+                        <select id="showmodal-select" value={selectedValue} required={false} disabled={false}
+                            onChange={(e) => setSelectedValue(e.target.value)}>
+                            {Options}
+                        </select>
+                    </div>}
                 </div>
             </div>
             <div className="display-bottom">
@@ -47,15 +56,9 @@ export default function DisplayModal({ data, mediacategory }) {
                 </div>
             </div>
             {(mediacategory === 'tvshows') &&
-                <div>
-                    <div className="list-episodes">
-                        <select id="showmodal-select" value={this} required={false} disabled={false}
-                            onChange={(e) => e.target.value}>
-                            <option value="">None</option>
-                            {Options}
-                        </select>
-                    </div>
-                    {seasondetail}
+                <div className="list-episodes">
+
+                    {episodes}
                 </div>
             }
         </div>

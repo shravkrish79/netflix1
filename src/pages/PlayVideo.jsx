@@ -4,16 +4,18 @@ export default function PlayVideo() {
     const Location = useLocation();
     const videourl = Location.state.data;
     console.log(videourl)
-    if(videourl.Trailer===null) { return <h1> video unavailable.</h1>}
+    
+    const videoSource = videourl.Trailer ? videourl.Trailer : videourl.EpisodeVideo;
+    if(videoSource===null)  { return <h1> video unavailable.</h1>}
     return (
         <div id="playvideo">
             <iframe
                 key={videourl.id}
-                src={videourl.Trailer+'?autoplay=1'}
+                src={videoSource+'?autoplay=1'}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
-                title={videourl.Title}
+                title={videourl.Title ? videourl.Title: videourl.EpisodeTitle}
             />
         </div>
     )
