@@ -3,7 +3,7 @@ import {useLocation} from "react-router-dom";
 export default function PlayVideo() {
     const Location = useLocation();
     const videourl = Location.state.data;
-    console.log(videourl)
+    // console.log(videourl)
     
     const videoSource = videourl.Trailer ? videourl.Trailer : videourl.EpisodeVideo;
     if(videoSource===null)  { return <h1> video unavailable.</h1>}

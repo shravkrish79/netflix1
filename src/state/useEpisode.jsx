@@ -11,9 +11,10 @@ export function EpisodeProvider({ children }) {
     // State
     const [episodeData, episodeDispatch] = useReducer(itemsReducer, []);
     const [isSearch, setIsSearch] = useReducer(itemsReducer,false);
+    const [slide, setSlide] = useReducer(itemsReducer,0);
 
     // Properties
-    const value = { episodeData, episodeDispatch,isSearch, setIsSearch  };
+    const value = { episodeData, episodeDispatch,isSearch, setIsSearch, slide, setSlide };
 
     return <EpisodeContext.Provider value={value}>{children}</EpisodeContext.Provider>;
 }

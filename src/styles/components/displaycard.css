@@ -1,6 +1,6 @@
 #displaycard {
     min-height: 80vh;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .withoutbanner {
@@ -18,6 +18,7 @@
     display: flex;
     flex-direction: column;
     gap: 50px;
+    
 }
 
 #displaycard ul li {
@@ -36,6 +37,7 @@
 }
 
 .content-cards {
+    position: relative;
     display: flex;
     gap: 10px;
     height: 20vh;
@@ -85,6 +87,69 @@
     transform: scale(105%) translateY(-10%);
     overflow: visible;
 }
+
+
+.content-cards .datacard--enter img {
+    transform: scale(1.5);
+    transition: 0.4s transform;
+    transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
+  }
+  .content-cards .datacard--leave img {
+    transform: scale(1);
+    transition: 0.4s transform;
+    transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
+  }
+  .content-cards .datacard--next {
+    transform: translateX(50px);
+    transition: 0.4s transform ease;
+  }
+  .content-cards .datacard--next-leave {
+    transform: translateX(0);
+    transition: 0.4s transform ease;
+  }
+  .content-cards .datacard--previous {
+    transform: translateX(-50px);
+    transition: 0.4s transform ease;
+  }
+  .content-cards .datacard--previous-leave {
+    transform: translateX(0);
+    transition: 0.3s transform ease;
+  }
+  .content-cards .datacard:not(:last-child) {
+    margin-right: 20px;
+  }
+
+.nav-control {
+    position: absolute;
+    top: 0%;
+    bottom: 0%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width: 50px;
+    background: rgba(0, 0, 0, 0);
+    border: 0;
+    cursor: pointer;
+    transition: 0.2s opacity;
+    outline: 0;
+    z-index: 5;
+  }
+
+  .nav-control:hover{
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  .content-cards .leftbutton {
+    left: -50px;
+    opacity: 0;
+  }
+  .content-cards .rightbutton {
+    right: 0;
+  }
+  .carousel .nav-control--disabled {
+    opacity: 0;
+  }
 
 
 @media screen and (max-width:699px) {
